@@ -12,7 +12,7 @@ my $fn = $ARGV[0];
 open(my $fh, '<', $fn) or die "failed to open file $!";
 binmode($fh);
 local $/;
-my $data = <$fh>;
+my $data_file = <$fh>;
 close($fh);
 
 
@@ -27,23 +27,50 @@ close($fh);
 
 
 
+sub parse_entry_block {
+  my ($data, $block_id) = @_;
+  
+  my $block_data = substr($data, $block_id * 0x1000);
+  my $first_byte = hex unpack('H*', substr($block_data, 0, 1));
+
+  my $result = {
+    id => $block_id,
+    fb => $first_byte,
+    first_line => GpsWatch::hex_to_intarray(unpack('H*', substr($block_data, 0, 32)))
+  };
+  if ($first_byte == 0x80) {
+    $result->{type} = 'end';
+    return $result;
+  }
+  elsif ($first_byte == 0x01 || $first_byte == 0x02) {
+    $result->{type} = 'start';
+    return $result;
+  }
+  warn 'unknown block type: $first_byte';
+}
 
 
 sub parse_block_0 {
-  my ($block) = @_;
+  my ($data) = @_;
 
-  my $records = substr($block, 0x100, 32);
-  my $last_block_num;
-  my $wos = [];
-  my $current_wo;
+
+  my $result = { };
+
+
+  $result->{wos} = [];
+  my $records = substr($data, 0x100, 32);
+  my $last_block_num = 0xff;
+  my $current_wo = [];
+  push (@{$result->{wos}}, $current_wo);
   for (my $i=0; ; $i++) {
-    my $wo_entry = unpack('H*', substr($block, 0x100 + $i, 1));
-    if ($wo_entry ne 'ff') {
-      $current_wo = $wo_entry unless defined $current_wo;
+    my $wo_entry = hex unpack('H*', substr($data, 0x100 + $i, 1));
+    if ($wo_entry != 0xff) {
+      my $parsed = parse_entry_block($data, $wo_entry);
+      push(@$current_wo, $parsed);
     }
-    elsif ($last_block_num ne 'ff') {
-      push (@$wos, $current_wo);
-      $current_wo = undef;
+    elsif ($last_block_num != 0xff) {
+      $current_wo = [];
+      push (@{$result->{wos}}, $current_wo);
     }
     else {
       last;
@@ -51,14 +78,13 @@ sub parse_block_0 {
     $last_block_num = $wo_entry;
   }
 
-  foreach my $wo (@$wos) {
-    print "workout: ". Dumper($wo);
-  }
-
-  my $pathnames = substr($block, 0x600, 0x130);
+  $result->{pathnames} = [];
+  my $pathnames = substr($data, 0x600, 0x130);
   for(my $i = 0; $i < 10; $i ++) {
-    print "pathname: ". substr($pathnames, $i*32, 32)."\n";
+    push(@{$result->{pathnames}}, substr($pathnames, $i*32, 32));
   }
+  
+  return $result;
 }
 
 sub parse_block_1 {
@@ -83,9 +109,5 @@ sub parse_block_1 {
 
 }
 
-my $block_0 = substr($data, 0, 0x1000);
-my $block_1 = substr($data, 0x1000, 0x1000);
-
-
-parse_block_0($block_0);
-parse_block_1($block_1);
+my $parsed = parse_block_0($data_file);
+print Dumper($parsed);
