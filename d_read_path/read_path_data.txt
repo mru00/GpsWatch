@@ -1,0 +1,2650 @@
+[29/10/2014 19:42:13] - Open port COM3 (C:\Program Files\GPS Master 2.0.14\GPS Master.exe)	
+	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 01 10 00 10 b0 b3                        ав.....░│       	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 08 11 56 65 72 31 2e 32 30 01 ff b0 b3   ав...Ver1.20. ░│	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 01 2c 00 2c b0 b3                        ав..,.,░│       	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 0a 2d 00 00 00 01 00 08 07 00 00 00 3d   ав..-..........=	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 00 00 00 80 00 92 b0 b3            ав......А.Т░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 14 eb 00 1a 1a 10 53 03 1d 1b 4e   ав.Б..ы....S...N	
+    07 40 05 0a 00 00 81 60 7d 6a 90 7d 9a 60 7d 01   .@....Б`}jР}Ъ`}.	
+    02 07 16 0c 0f 0d 00 15 01 16 14 02 15 07 0d 00   ................	
+    15 01 03 02 00 0c 0f 0d 00 15 01 02 0e 03 0c 0f   ................	
+    0d 00 15 01 15 07 01 0c 0f 0d 00 15 01 be 41 05   .............╛A.	
+    00 f3 10 4a 10 72 00 7f 00 2c 01 64 00 e8 03 58   .є.J.r..,.d.ш.X	
+    02 08 00 00 03 31 2e 32 30 2e 32 32 5f 4b 52 49   .....1.20.22_KRI	
+    50 30 5f 30 30 ff ff ff ff ff ff ff ff ff ff ff   P0_00           	
+    ff ff ff ff ff 21 86 b0 b3                             !Ж░│       	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 80 00 00 80 01 12 b0 b3            ав...А..А..░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 00 00 c0 ff ff ff ff ff ff ff ff        ..└        	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff 3f 00 00 00 79 99 b0 b3                         ?...yЩ░│       	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 00 01 00 80 00 93 b0 b3            ав......А.У░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 01 02 ff 03 04 ff 05 06 ff 07 08   ав.Б... .. .. ..	
+    09 ff 0a 0b ff 0c 0d ff 0e 0f ff 10 11 ff 12 13   . .. .. .. .. ..	
+    ff 14 15 ff ff ff ff ff ff ff ff ff ff ff ff ff    ..             	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 6b 8f b0 b3                             kП░│       	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 80 01 00 80 01 13 b0 b3            ав...А..А..░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 00 02 00 80 00 94 b0 b3            ав......А.Ф░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 80 02 00 80 01 14 b0 b3            ав...А..А..░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 00 03 00 80 00 95 b0 b3            ав......А.Х░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 80 03 00 80 01 15 b0 b3            ав...А..А..░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 00 04 00 80 00 96 b0 b3            ав......А.Ц░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 80 04 00 80 01 16 b0 b3            ав...А..А..░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 00 05 00 80 00 97 b0 b3            ав......А.Ч░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 00 00 00 00 00 00 00 00 00 00 ff   ав.Б........... 	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 75 9d b0 b3                             uЭ░│       	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 80 05 00 80 01 17 b0 b3            ав...А..А..░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 00 06 00 80 00 98 b0 b3            ав......А.Ш░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 50 61 74 68 31 00 00 00 00 00 00   ав.Б.Path1......	
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................	
+    00 00 00 00 00 50 61 74 68 32 00 00 00 00 00 00   .....Path2......	
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................	
+    00 00 00 00 00 50 61 74 68 33 00 00 00 00 00 00   .....Path3......	
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................	
+    00 00 00 00 00 50 61 74 68 34 00 00 00 00 00 00   .....Path4......	
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................	
+    00 00 00 00 00 07 11 b0 b3                        .......░│       	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 80 06 00 80 01 18 b0 b3            ав...А..А..░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 50 61 74 68 35 00 00 00 00 00 00   ав.Б.Path5......	
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................	
+    00 00 00 00 00 50 61 74 68 36 00 00 00 00 00 00   .....Path6......	
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................	
+    00 00 00 00 00 50 61 74 68 37 00 00 00 00 00 00   .....Path7......	
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................	
+    00 00 00 00 00 50 61 74 68 38 00 00 00 00 00 00   .....Path8......	
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................	
+    00 00 00 00 00 07 21 b0 b3                        ......!░│       	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 00 07 00 80 00 99 b0 b3            ав......А.Щ░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 50 61 74 68 39 00 00 00 00 00 00   ав.Б.Path9......	
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................	
+    00 00 00 00 00 50 61 74 68 31 30 00 00 00 00 00   .....Path10.....	
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................	
+    00 00 00 00 00 ff ff ff ff ff ff ff ff ff ff ff   .....           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 43 87 b0 b3                             CЗ░│       	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 80 07 00 80 01 19 b0 b3            ав...А..А..░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:14] Written data	
+    a0 a2 00 05 12 00 08 00 80 00 9a b0 b3            ав......А.Ъ░│   	
+[29/10/2014 19:42:14] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 80 08 00 80 01 1a b0 b3            ав...А..А..░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 00 09 00 80 00 9b b0 b3            ав......А.Ы░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 52 75 6e 6e 69 6e 67 00 00 00 43   ав.Б.Running...C	
+    79 63 6c 69 6e 67 00 00 00 48 69 6b 69 6e 67 00   ycling...Hiking.	
+    00 00 00 53 61 69 6c 69 6e 67 00 00 00 55 73 65   ...Sailing...Use	
+    72 00 00 00 00 00 00 ff ff ff ff ff ff ff ff ff   r......         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 5a 2f b0 b3                             Z/░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 80 09 00 80 01 1b b0 b3            ав...А..А..░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 00 0a 00 80 00 9c b0 b3            ав......А.Ь░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 80 0a 00 80 01 1c b0 b3            ав...А..А..░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 00 0b 00 80 00 9d b0 b3            ав......А.Э░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 80 0b 00 80 01 1d b0 b3            ав...А..А..░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 00 0c 00 80 00 9e b0 b3            ав......А.Ю░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 80 0c 00 80 01 1e b0 b3            ав...А..А..░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 00 0d 00 80 00 9f b0 b3            ав......А.Я░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 80 0d 00 80 01 1f b0 b3            ав...А..А..░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 00 0e 00 80 00 a0 b0 b3            ав......А.а░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 80 0e 00 80 01 20 b0 b3            ав...А..А. ░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 00 0f 00 80 00 a1 b0 b3            ав......А.б░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 80 0f 00 80 01 21 b0 b3            ав...А..А.!░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 00 90 0f 80 01 31 b0 b3            ав....Р.А.1░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 80 90 0f 80 01 b1 b0 b3            ав...АР.А.▒░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 00 91 0f 80 01 32 b0 b3            ав....С.А.2░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 80 91 0f 80 01 b2 b0 b3            ав...АС.А.▓░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 00 92 0f 80 01 33 b0 b3            ав....Т.А.3░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:15] Written data	
+    a0 a2 00 05 12 80 92 0f 80 01 b3 b0 b3            ав...АТ.А.│░│   	
+[29/10/2014 19:42:15] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 00 93 0f 80 01 34 b0 b3            ав....У.А.4░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 80 93 0f 80 01 b4 b0 b3            ав...АУ.А.┤░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 00 94 0f 80 01 35 b0 b3            ав....Ф.А.5░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 80 94 0f 80 01 b5 b0 b3            ав...АФ.А.╡░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 00 95 0f 80 01 36 b0 b3            ав....Х.А.6░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 80 95 0f 80 01 b6 b0 b3            ав...АХ.А.╢░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 00 96 0f 80 01 37 b0 b3            ав....Ц.А.7░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 80 96 0f 80 01 b7 b0 b3            ав...АЦ.А.╖░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 00 97 0f 80 01 38 b0 b3            ав....Ч.А.8░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 80 97 0f 80 01 b8 b0 b3            ав...АЧ.А.╕░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 00 98 0f 80 01 39 b0 b3            ав....Ш.А.9░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 80 98 0f 80 01 b9 b0 b3            ав...АШ.А.╣░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 00 99 0f 80 01 3a b0 b3            ав....Щ.А.:░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 80 99 0f 80 01 ba b0 b3            ав...АЩ.А.║░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 00 9a 0f 80 01 3b b0 b3            ав....Ъ.А.;░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 80 9a 0f 80 01 bb b0 b3            ав...АЪ.А.╗░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 00 9b 0f 80 01 3c b0 b3            ав....Ы.А.<░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 80 9b 0f 80 01 bc b0 b3            ав...АЫ.А.╝░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 00 9c 0f 80 01 3d b0 b3            ав....Ь.А.=░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:16] Written data	
+    a0 a2 00 05 12 80 9c 0f 80 01 bd b0 b3            ав...АЬ.А.╜░│   	
+[29/10/2014 19:42:16] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 00 9d 0f 80 01 3e b0 b3            ав....Э.А.>░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 80 9d 0f 80 01 be b0 b3            ав...АЭ.А.╛░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 00 9e 0f 80 01 3f b0 b3            ав....Ю.А.?░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 80 9e 0f 80 01 bf b0 b3            ав...АЮ.А.┐░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 00 9f 0f 80 01 40 b0 b3            ав....Я.А.@░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 80 9f 0f 80 01 c0 b0 b3            ав...АЯ.А.└░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 00 a0 0f 80 01 41 b0 b3            ав....а.А.A░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 80 a0 0f 80 01 c1 b0 b3            ав...Аа.А.┴░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 00 a1 0f 80 01 42 b0 b3            ав....б.А.B░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 80 a1 0f 80 01 c2 b0 b3            ав...Аб.А.┬░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 00 a2 0f 80 01 43 b0 b3            ав....в.А.C░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 80 a2 0f 80 01 c3 b0 b3            ав...Ав.А.├░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 00 a3 0f 80 01 44 b0 b3            ав....г.А.D░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 80 a3 0f 80 01 c4 b0 b3            ав...Аг.А.─░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 00 a4 0f 80 01 45 b0 b3            ав....д.А.E░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 80 a4 0f 80 01 c5 b0 b3            ав...Ад.А.┼░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 00 a5 0f 80 01 46 b0 b3            ав....е.А.F░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 80 a5 0f 80 01 c6 b0 b3            ав...Ае.А.╞░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 00 a6 0f 80 01 47 b0 b3            ав....ж.А.G░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 80 a6 0f 80 01 c7 b0 b3            ав...Аж.А.╟░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 00 a7 0f 80 01 48 b0 b3            ав....з.А.H░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 80 a7 0f 80 01 c8 b0 b3            ав...Аз.А.╚░│   	
+[29/10/2014 19:42:17] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:17] Written data	
+    a0 a2 00 05 12 00 a8 0f 80 01 49 b0 b3            ав....и.А.I░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 80 a8 0f 80 01 c9 b0 b3            ав...Аи.А.╔░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 00 a9 0f 80 01 4a b0 b3            ав....й.А.J░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 80 a9 0f 80 01 ca b0 b3            ав...Ай.А.╩░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 00 aa 0f 80 01 4b b0 b3            ав....к.А.K░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 80 aa 0f 80 01 cb b0 b3            ав...Ак.А.╦░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 00 ab 0f 80 01 4c b0 b3            ав....л.А.L░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 80 ab 0f 80 01 cc b0 b3            ав...Ал.А.╠░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 00 ac 0f 80 01 4d b0 b3            ав....м.А.M░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 80 ac 0f 80 01 cd b0 b3            ав...Ам.А.═░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3                             У░│       	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 00 ad 0f 80 01 4e b0 b3            ав....н.А.N░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 80 ad 0f 80 01 ce b0 b3            ав...Ан.А.╬░│   	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 00 ae 0f 80 01 4f b0 b3            ав....о.А.O░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 80 ae 0f 80 01 cf b0 b3            ав...Ао.А.╧░│   	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 00 af 0f 80 01 50 b0 b3            ав....п.А.P░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 80 af 0f 80 01 d0 b0 b3            ав...Ап.А.╨░│   	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 00 b0 0f 80 01 51 b0 b3            ав....░.А.Q░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 80 b0 0f 80 01 d1 b0 b3            ав...А░.А.╤░│   	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 00 b1 0f 80 01 52 b0 b3            ав....▒.А.R░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 80 b1 0f 80 01 d2 b0 b3            ав...А▒.А.╥░│   	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 00 b2 0f 80 01 53 b0 b3            ав....▓.А.S░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 80 b2 0f 80 01 d3 b0 b3            ав...А▓.А.╙░│   	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 00 b3 0f 80 01 54 b0 b3            ав....│.А.T░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 80 b3 0f 80 01 d4 b0 b3            ав...А│.А.╘░│   	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 00 b4 0f 80 01 55 b0 b3            ав....┤.А.U░│   	
+[29/10/2014 19:42:18] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 80 b4 0f 80 01 d5 b0 b3            ав...А┤.А.╒░│   	
+[29/10/2014 19:42:18] Written data	
+    a0 a2 00 05 12 00 b5 0f 80 01 56 b0 b3            ав....╡.А.V░│   	
+[29/10/2014 19:42:19] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 b5 0f 80 01 d6 b0 b3            ав...А╡.А.╓░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 b6 0f 80 01 57 b0 b3            ав....╢.А.W░│   	
+[29/10/2014 19:42:19] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 b6 0f 80 01 d7 b0 b3            ав...А╢.А.╫░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 b7 0f 80 01 58 b0 b3            ав....╖.А.X░│   	
+[29/10/2014 19:42:19] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 b7 0f 80 01 d8 b0 b3            ав...А╖.А.╪░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 b8 0f 80 01 59 b0 b3            ав....╕.А.Y░│   	
+[29/10/2014 19:42:19] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 b8 0f 80 01 d9 b0 b3            ав...А╕.А.┘░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 b9 0f 80 01 5a b0 b3            ав....╣.А.Z░│   	
+[29/10/2014 19:42:19] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 b9 0f 80 01 da b0 b3            ав...А╣.А.┌░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 ba 0f 80 01 5b b0 b3            ав....║.А.[░│   	
+[29/10/2014 19:42:19] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 ba 0f 80 01 db b0 b3            ав...А║.А.█░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 bb 0f 80 01 5c b0 b3            ав....╗.А.\░│   	
+[29/10/2014 19:42:19] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 bb 0f 80 01 dc b0 b3            ав...А╗.А.▄░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 bc 0f 80 01 5d b0 b3            ав....╝.А.]░│   	
+[29/10/2014 19:42:19] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 bc 0f 80 01 dd b0 b3            ав...А╝.А.▌░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 bd 0f 80 01 5e b0 b3            ав....╜.А.^░│   	
+[29/10/2014 19:42:19] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 bd 0f 80 01 de b0 b3            ав...А╜.А.▐░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 be 0f 80 01 5f b0 b3            ав....╛.А._░│   	
+[29/10/2014 19:42:19] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3                                             ░│              	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 be 0f 80 01 df b0 b3            ав...А╛.А.▀░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 bf 0f 80 01 60 b0 b3            ав....┐.А.`░│   	
+[29/10/2014 19:42:19] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 bf 0f 80 01 e0 b0 b3            ав...А┐.А.р░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 c0 0f 80 01 61 b0 b3            ав....└.А.a░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 c0 0f 80 01 e1 b0 b3            ав...А└.А.с░│   	
+[29/10/2014 19:42:19] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 c1 0f 80 01 62 b0 b3            ав....┴.А.b░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 c1 0f 80 01 e2 b0 b3            ав...А┴.А.т░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 c2 0f 80 01 63 b0 b3            ав....┬.А.c░│   	
+[29/10/2014 19:42:19] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 c2 0f 80 01 e3 b0 b3            ав...А┬.А.у░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 c3 0f 80 01 64 b0 b3            ав....├.А.d░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 c3 0f 80 01 e4 b0 b3            ав...А├.А.ф░│   	
+[29/10/2014 19:42:19] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 c4 0f 80 01 65 b0 b3            ав....─.А.e░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 c4 0f 80 01 e5 b0 b3            ав...А─.А.х░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 c5 0f 80 01 66 b0 b3            ав....┼.А.f░│   	
+[29/10/2014 19:42:19] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 c5 0f 80 01 e6 b0 b3            ав...А┼.А.ц░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 00 c6 0f 80 01 67 b0 b3            ав....╞.А.g░│   	
+[29/10/2014 19:42:19] Written data	
+    a0 a2 00 05 12 80 c6 0f 80 01 e7 b0 b3            ав...А╞.А.ч░│   	
+[29/10/2014 19:42:20] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 c7 0f 80 01 68 b0 b3            ав....╟.А.h░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 c7 0f 80 01 e8 b0 b3            ав...А╟.А.ш░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 c8 0f 80 01 69 b0 b3            ав....╚.А.i░│   	
+[29/10/2014 19:42:20] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 c8 0f 80 01 e9 b0 b3            ав...А╚.А.щ░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 c9 0f 80 01 6a b0 b3            ав....╔.А.j░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 c9 0f 80 01 ea b0 b3            ав...А╔.А.ъ░│   	
+[29/10/2014 19:42:20] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 ca 0f 80 01 6b b0 b3            ав....╩.А.k░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 ca 0f 80 01 eb b0 b3            ав...А╩.А.ы░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 cb 0f 80 01 6c b0 b3            ав....╦.А.l░│   	
+[29/10/2014 19:42:20] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 cb 0f 80 01 ec b0 b3            ав...А╦.А.ь░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 cc 0f 80 01 6d b0 b3            ав....╠.А.m░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 cc 0f 80 01 ed b0 b3            ав...А╠.А.э░│   	
+[29/10/2014 19:42:20] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 cd 0f 80 01 6e b0 b3            ав....═.А.n░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 cd 0f 80 01 ee b0 b3            ав...А═.А.ю░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 ce 0f 80 01 6f b0 b3            ав....╬.А.o░│   	
+[29/10/2014 19:42:20] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 ce 0f 80 01 ef b0 b3            ав...А╬.А.я░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 cf 0f 80 01 70 b0 b3            ав....╧.А.p░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 cf 0f 80 01 f0 b0 b3            ав...А╧.А.Ё░│   	
+[29/10/2014 19:42:20] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 d0 0f 80 01 71 b0 b3            ав....╨.А.q░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 d0 0f 80 01 f1 b0 b3            ав...А╨.А.ё░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 d1 0f 80 01 72 b0 b3            ав....╤.А.r░│   	
+[29/10/2014 19:42:20] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 d1 0f 80 01 f2 b0 b3            ав...А╤.А.Є░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 d2 0f 80 01 73 b0 b3            ав....╥.А.s░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 d2 0f 80 01 f3 b0 b3            ав...А╥.А.є░│   	
+[29/10/2014 19:42:20] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 d3 0f 80 01 74 b0 b3            ав....╙.А.t░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 d3 0f 80 01 f4 b0 b3            ав...А╙.А.Ї░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 d4 0f 80 01 75 b0 b3            ав....╘.А.u░│   	
+[29/10/2014 19:42:20] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 d4 0f 80 01 f5 b0 b3            ав...А╘.А.ї░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 d5 0f 80 01 76 b0 b3            ав....╒.А.v░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 d5 0f 80 01 f6 b0 b3            ав...А╒.А.Ў░│   	
+[29/10/2014 19:42:20] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 d6 0f 80 01 77 b0 b3            ав....╓.А.w░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 d6 0f 80 01 f7 b0 b3            ав...А╓.А.ў░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 d7 0f 80 01 78 b0 b3            ав....╫.А.x░│   	
+[29/10/2014 19:42:20] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 d7 0f 80 01 f8 b0 b3            ав...А╫.А.°░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 00 d8 0f 80 01 79 b0 b3            ав....╪.А.y░│   	
+[29/10/2014 19:42:20] Written data	
+    a0 a2 00 05 12 80 d8 0f 80 01 f9 b0 b3            ав...А╪.А.∙░│   	
+[29/10/2014 19:42:20] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 d9 0f 80 01 7a b0 b3            ав....┘.А.z░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 d9 0f 80 01 fa b0 b3            ав...А┘.А.·░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 da 0f 80 01 7b b0 b3            ав....┌.А.{░│   	
+[29/10/2014 19:42:21] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 da 0f 80 01 fb b0 b3            ав...А┌.А.√░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 db 0f 80 01 7c b0 b3            ав....█.А.|░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 db 0f 80 01 fc b0 b3            ав...А█.А.№░│   	
+[29/10/2014 19:42:21] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 dc 0f 80 01 7d b0 b3            ав....▄.А.}░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 dc 0f 80 01 fd b0 b3            ав...А▄.А.¤░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 dd 0f 80 01 7e b0 b3            ав....▌.А.~░│   	
+[29/10/2014 19:42:21] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 dd 0f 80 01 fe b0 b3            ав...А▌.А.■░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 de 0f 80 01 7f b0 b3            ав....▐.А.░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 de 0f 80 01 ff b0 b3            ав...А▐.А. ░│   	
+[29/10/2014 19:42:21] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 df 0f 80 01 80 b0 b3            ав....▀.А.А░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 df 0f 80 02 00 b0 b3            ав...А▀.А..░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 e0 0f 80 01 81 b0 b3            ав....р.А.Б░│   	
+[29/10/2014 19:42:21] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 e0 0f 80 02 01 b0 b3            ав...Ар.А..░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 e1 0f 80 01 82 b0 b3            ав....с.А.В░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 e1 0f 80 02 02 b0 b3            ав...Ас.А..░│   	
+[29/10/2014 19:42:21] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 e2 0f 80 01 83 b0 b3            ав....т.А.Г░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 e2 0f 80 02 03 b0 b3            ав...Ат.А..░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 e3 0f 80 01 84 b0 b3            ав....у.А.Д░│   	
+[29/10/2014 19:42:21] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 e3 0f 80 02 04 b0 b3            ав...Ау.А..░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 e4 0f 80 01 85 b0 b3            ав....ф.А.Е░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 e4 0f 80 02 05 b0 b3            ав...Аф.А..░│   	
+[29/10/2014 19:42:21] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 e5 0f 80 01 86 b0 b3            ав....х.А.Ж░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 e5 0f 80 02 06 b0 b3            ав...Ах.А..░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 e6 0f 80 01 87 b0 b3            ав....ц.А.З░│   	
+[29/10/2014 19:42:21] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 e6 0f 80 02 07 b0 b3            ав...Ац.А..░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 e7 0f 80 01 88 b0 b3            ав....ч.А.И░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 e7 0f 80 02 08 b0 b3            ав...Ач.А..░│   	
+[29/10/2014 19:42:21] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 e8 0f 80 01 89 b0 b3            ав....ш.А.Й░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 e8 0f 80 02 09 b0 b3            ав...Аш.А..░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 e9 0f 80 01 8a b0 b3            ав....щ.А.К░│   	
+[29/10/2014 19:42:21] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 e9 0f 80 02 0a b0 b3            ав...Ащ.А..░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 ea 0f 80 01 8b b0 b3            ав....ъ.А.Л░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 ea 0f 80 02 0b b0 b3            ав...Аъ.А..░│   	
+[29/10/2014 19:42:21] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3                         У░│     	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 eb 0f 80 01 8c b0 b3            ав....ы.А.М░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 80 eb 0f 80 02 0c b0 b3            ав...Аы.А..░│   	
+[29/10/2014 19:42:21] Written data	
+    a0 a2 00 05 12 00 ec 0f 80 01 8d b0 b3            ав....ь.А.Н░│   	
+[29/10/2014 19:42:22] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13          У░│ав.Б.	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    7f 93 b0 b3                                       У░│            	
+[29/10/2014 19:42:22] Written data	
+    a0 a2 00 05 12 80 ec 0f 80 02 0d b0 b3            ав...Аь.А..░│   	
+[29/10/2014 19:42:22] Written data	
+    a0 a2 00 05 12 00 ed 0f 80 01 8e b0 b3            ав....э.А.О░│   	
+[29/10/2014 19:42:22] Written data	
+    a0 a2 00 05 12 80 ed 0f 80 02 0e b0 b3            ав...Аэ.А..░│   	
+[29/10/2014 19:42:22] Written data	
+    a0 a2 00 05 12 00 ee 0f 80 01 8f b0 b3            ав....ю.А.П░│   	
+[29/10/2014 19:42:22] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13          У░│ав.Б.	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    7f 93 b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff   У░│ав.Б.       	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff 7f 93 b0 b3 a0 a2 00            У░│ав.	
+    81 13 ff ff ff ff ff ff ff ff ff ff ff ff ff ff   Б.              	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff 7f 93 b0 b3                                   У░│          	
+[29/10/2014 19:42:22] Written data	
+    a0 a2 00 05 12 80 ee 0f 80 02 0f b0 b3            ав...Аю.А..░│   	
+[29/10/2014 19:42:22] Written data	
+    a0 a2 00 05 12 00 ef 0f 80 01 90 b0 b3            ав....я.А.Р░│   	
+[29/10/2014 19:42:22] Written data	
+    a0 a2 00 05 12 80 ef 0f 80 02 10 b0 b3            ав...Ая.А..░│   	
+[29/10/2014 19:42:22] Written data	
+    a0 a2 00 05 12 80 f0 0f 80 02 11 b0 b3            ав...АЁ.А..░│   	
+[29/10/2014 19:42:22] Written data	
+    a0 a2 00 05 12 00 f1 0f 80 01 92 b0 b3            ав....ё.А.Т░│   	
+[29/10/2014 19:42:22] Read data	
+    a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff ff ff   ав.Б.           	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13 ff ff        У░│ав.Б.  	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff 7f 93                 У	
+    b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff ff ff   ░│ав.Б.         	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff 7f 93 b0 b3 a0 a2 00 81 13          У░│ав.Б.	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    7f 93 b0 b3 a0 a2 00 81 13 ff ff ff ff ff ff ff   У░│ав.Б.       	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff                   	
+    ff ff ff ff ff ff ff ff ff 7f 93 b0 b3                     У░│   	
+[29/10/2014 19:42:23] - Close port COM3	
+	
