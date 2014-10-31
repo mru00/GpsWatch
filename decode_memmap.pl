@@ -162,7 +162,7 @@ sub parse_block_0 {
     my $first_block;
     push (@{$result->{wos}}, $current_wo);
     # xxx limit $i artifially
-    for (my $i=0; $i < $result->{nblocks}-1 ; $i++) {
+    for (my $i=0; scalar @{$result->{wos}} < $result->{nblocks}-1 ; $i++) {
       my $wo_entry = $block_data->[0x100 + $i];
       if ($wo_entry != 0xff) {
         my $parsed = parse_entry_block($data, $wo_entry, $first_block);
