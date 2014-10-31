@@ -2,6 +2,35 @@
 activity names are always 10 bytes, \0 filled at the and
 
 
+first block:
+{
+  0x0000 b checksum
+  0x0001 b checksum_inv
+  0x0003 b timezone
+
+  0x001a b selected_profile
+}
+
+entry block 
+{
+  0x0000 b
+  0x0001
+  0x0002 lap count
+  0x0003 ss  ... timestamp
+  0x0004 mm
+  0x0005 hh
+  0x0006 dd
+  0x0007 mm 
+  0x0008 yy
+  0x0009
+  0x000a
+  0x000b
+  0x000c
+  0x000d
+  0x000e
+  0x000f  selected profile
+}
+
 
 change 2:00 => 1:30
 

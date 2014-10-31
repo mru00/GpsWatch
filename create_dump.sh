@@ -1,9 +1,14 @@
-#! /bin/bash -xeu
+#! /bin/bash -xu
 
 desc=$(date +%Y%m%d_%H%M%S)_$*
 mkdir $desc
-./load_data.pl
 
+
+rm last
+mv current last
+ln -s $desc current
+
+./load_data.pl
 
 mv from_watch.bin $desc/current.bin
 cp last/current.bin $desc/last.bin
@@ -12,10 +17,9 @@ cp last/current.bin $desc/last.bin
 
 diff <(hexdump -C $desc/last.bin) <(hexdump -C $desc/current.bin) | tee $desc/diff.txt
 
+echo "$*" > $desc/info.txt
 $EDITOR $desc/info.txt
 
-rm last
-mv current last
-ln -s $desc current
+
 
 

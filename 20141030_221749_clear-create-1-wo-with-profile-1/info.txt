@@ -1,0 +1,13 @@
+clear-create-1-wo-with-profile-1
+
+
+1 lap
+0 cal
+wo time 00:00.03
+speed 0
+hr avg ?
+dist 0
+pace 0
+
+lap time 00 03 47
+

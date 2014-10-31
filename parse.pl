@@ -200,11 +200,25 @@ my @process_later_rx;
 open(my $memmap_file, ">", "from_parse.bin");
 binmode ($memmap_file, ':bytes');
 
+my %open_req;
+
 for (my $i = 0; $i < @$tx_part; $i ++) {
   my $tx_data = GpsWatch::parse_w($tx_part->[$i]);
   my $rx_data = GpsWatch::parse_r($rx_part->[$i]);
 
-  GpsWatch::conversation($tx_data->{hl}, $rx_data->{hl}, $memmap_file);
+  my $rx_opcode = $rx_data->{opcode};
+
+  if (defined $open_req{$rx_opcode}) {
+    print "using buffered tx\n";
+    GpsWatch::conversation($open_req{$rx_opcode}->{hl}, $rx_data->{hl}, $memmap_file);
+    delete $open_req{$rx_opcode};
+
+    $open_req{GpsWatch::make_rx_opcode($tx_data->{opcode})} = $tx_data;
+  }
+  else {
+    GpsWatch::conversation($tx_data->{hl}, $rx_data->{hl}, $memmap_file);
+  }
+
 }
 
 

@@ -6,14 +6,9 @@ use warnings;
 use GpsWatch;
 use Data::Dumper;
 
+$Data::Dumper::Sortkeys = 1;
 
-my $fn = $ARGV[0];
 
-open(my $fh, '<', $fn) or die "failed to open file $!";
-binmode($fh);
-local $/;
-my $data_file = <$fh>;
-close($fh);
 
 
 # 1000: 01 00 01 0C 14 00 1E 0A  0E 03 00 00 00 00 00 01
@@ -26,29 +21,121 @@ close($fh);
 # 8000: 80 00 0E 0A 1E 00 27 1B  00 94 35 77 00 94 35 77
 
 
+sub get_byte_at {
+  my ($data, $addr, $l) = @_;
 
-sub parse_entry_block {
-  my ($data, $block_id) = @_;
-  
-  my $block_data = substr($data, $block_id * 0x1000);
-  my $first_byte = hex unpack('H*', substr($block_data, 0, 1));
-
-  my $result = {
-    id => $block_id,
-    fb => $first_byte,
-    first_line => GpsWatch::hex_to_intarray(unpack('H*', substr($block_data, 0, 32)))
-  };
-  if ($first_byte == 0x80) {
-    $result->{type} = 'end';
-    return $result;
+  if ($l) {
+    return GpsWatch::hex_to_intarray(unpack('H*', substr($data, $addr, $l)))
   }
-  elsif ($first_byte == 0x01 || $first_byte == 0x02) {
-    $result->{type} = 'start';
-    return $result;
-  }
-  warn 'unknown block type: $first_byte';
+  return hex unpack('H*', substr($data, $addr, 1));
 }
 
+sub parse_sample {
+  my ($block_data, $start_addr) = @_;
+
+  my $result = {
+    type => $block_data->[$start_addr+0]
+  };
+
+  if ($result->{type} == 0x03) {
+
+    $result->{length} = 8;
+
+    $result->{timestamp} = sprintf("20%02d-%02d-%02d %02d:%02d:%02d",
+      $block_data->[$start_addr+1],
+      $block_data->[$start_addr+2],
+      $block_data->[$start_addr+3],
+      $block_data->[$start_addr+4],
+      $block_data->[$start_addr+5],
+      $block_data->[$start_addr+6],
+    );
+
+    $result->{hr} = $block_data->[$start_addr+7];
+  }
+  elsif ($result->{type} == 0x00) {
+
+    warn "unknown sample type $result->{type}";
+    # random number:
+    $result->{length} = 0; 
+  }
+  else {
+    die "unknown sample type $result->{type}";
+    # random number:
+    $result->{length} = 0; 
+  }
+
+  return $result;
+}
+
+sub parse_entry_block {
+  my ($data, $block_id, $first_block) = @_;
+
+  my $start_addr = 0x1000 * $block_id;
+  my $block_data = get_byte_at($data, $start_addr, 0x1000);
+
+  my $result = {
+    profile => $block_data->[0x0f],
+    start_addr => $start_addr,
+    id => $block_id,
+    fb => $block_data->[0],
+    first_line => join(",", map { sprintf("%3d", $_) } @{get_byte_at($data, $start_addr, 2*32)} )
+  };
+
+  if (! $first_block) {
+
+    $result->{numsamples} = $block_data->[0];
+    $result->{lapcount} = $block_data->[2];
+    $result->{laptimes} = [];
+
+    $result->{date} = sprintf("20%02d-%02d-%02d %02d:%02d:%02d",
+      $block_data->[3+5],
+      $block_data->[3+4],
+      $block_data->[3+3],
+      $block_data->[3+2],
+      $block_data->[3+1],
+      $block_data->[3+0]
+    );
+
+    for (my $laps = 0; $laps < hex $result->{lapcount}; $laps ++) {
+      push(@{$result->{laptimes}}, sprintf("%02d.%02d.%02d", 
+          $block_data->[0x40+0x10*$laps + 1],
+          $block_data->[0x40+0x10*$laps +2],
+          sprintf ("%02x", $block_data->[0x40+0x10*$laps +3]), # bcd?
+        ));
+    }
+  }
+  else {
+    my $numsamples = $first_block->{numsamples};
+    $result->{samples} = [];
+    my $block_offset = 25;
+    for (my $i = 0; $i < $numsamples; $i++) {
+
+
+      my $sample = parse_sample($block_data, $block_offset);
+      $block_offset += $sample->{length};
+
+      push(@{$result->{samples}}, $sample);
+    }
+  }
+
+
+
+  return $result;
+}
+
+
+
+sub parse_block_alloc {
+  my ($block_data) = @_;
+
+
+  my $n = 0;
+  while ( ($block_data->[0xe0 + $n/8] & ( 1<< ($n%8))) == 0) {
+    $n++;
+  };
+
+  return $n;
+}
 
 sub parse_block_0 {
   my ($data) = @_;
@@ -56,26 +143,45 @@ sub parse_block_0 {
 
   my $result = { };
 
+  my $block_data = get_byte_at($data, 0, 0x1000);
+  $result->{checksum} = $block_data->[0];
+  $result->{checksum_inv} = $block_data->[1];
+  $result->{timezone} = $block_data->[3];
+  $result->{selected_profile} = $block_data->[0x10+10];
 
-  $result->{wos} = [];
-  my $records = substr($data, 0x100, 32);
-  my $last_block_num = 0xff;
-  my $current_wo = [];
-  push (@{$result->{wos}}, $current_wo);
-  for (my $i=0; ; $i++) {
-    my $wo_entry = hex unpack('H*', substr($data, 0x100 + $i, 1));
-    if ($wo_entry != 0xff) {
-      my $parsed = parse_entry_block($data, $wo_entry);
-      push(@$current_wo, $parsed);
+  $result->{nblocks} = parse_block_alloc($block_data);
+  $result->{toc} = join(",", @{$block_data}[0x100..0x120] );
+
+  warn 'checksum error' unless $result->{checksum} == ( 0xff & ~ $result->{checksum_inv}) ;
+
+
+  if (length($data) > 0x1000) {
+    $result->{wos} = [];
+    my $current_wo = [];
+    my $last_block_num = 0xff;
+    my $first_block;
+    push (@{$result->{wos}}, $current_wo);
+    # xxx limit $i artifially
+    for (my $i=0; $i < $result->{nblocks}-1 ; $i++) {
+      my $wo_entry = $block_data->[0x100 + $i];
+      if ($wo_entry != 0xff) {
+        my $parsed = parse_entry_block($data, $wo_entry, $first_block);
+        $first_block ||= $parsed;
+        push(@$current_wo, $parsed);
+      }
+      elsif ($last_block_num != 0xff) {
+        $current_wo = [];
+        $first_block = 0;
+        push (@{$result->{wos}}, $current_wo);
+      }
+      else {
+        last;
+      }
+      $last_block_num = $wo_entry;
     }
-    elsif ($last_block_num != 0xff) {
-      $current_wo = [];
-      push (@{$result->{wos}}, $current_wo);
-    }
-    else {
-      last;
-    }
-    $last_block_num = $wo_entry;
+  }
+  else {
+    $result->{wos} = "not included in dump";
   }
 
   $result->{pathnames} = [];
@@ -83,31 +189,38 @@ sub parse_block_0 {
   for(my $i = 0; $i < 10; $i ++) {
     push(@{$result->{pathnames}}, substr($pathnames, $i*32, 32));
   }
-  
+
+  $result->{activities} = [];
+  my $act_names = substr($data, 0x900, 0x032);
+  for (my $i = 0; $i < 5; $i++) {
+    push(@{$result->{activities}}, substr($act_names, $i*10, 10));
+  }
+
+
   return $result;
 }
 
-sub parse_block_1 {
-  my ($block) = @_;
 
-  my $date = substr($block, 0, 16);
+foreach my $fn (@ARGV) {
 
-  my $date_str = unpack('H*', $date);
-  my $date_arr = GpsWatch::hex_to_intarray($date_str);
+  open(my $fh, '<', $fn) or die "failed to open file $!";
+  binmode($fh);
+  local $/;
+  my $data_file = <$fh>;
+  close($fh);
+  print $fn . "\n";
 
-  my $date_1 = sprintf("20%02d-%02d-%02d %02d:%02d",
-    $date_arr->[8],
-    $date_arr->[7],
-    $date_arr->[6],
-    $date_arr->[5],
-    $date_arr->[4],
-    $date_arr->[3],
-    0, 0, 0, 0
-  );
+  my $parsed = parse_block_0($data_file);
+  $parsed->{input_file} = $fn;
+  print Dumper($parsed);
 
-  print "$date_1\n";
-
+  if (ref $parsed->{wos} eq "ARRAY") {
+    #print Dumper($parsed->{nblocks}, $parsed->{224}, scalar @{$parsed->{wos}}, $parsed->{toc});
+    foreach my $wo (@{$parsed->{wos}}) {
+      print "\n";
+      foreach my $entry (@$wo) {
+        print( ">". $entry->{id} . "/". $entry->{first_line} . "\n");
+      }
+    }
+  }
 }
-
-my $parsed = parse_block_0($data_file);
-print Dumper($parsed);
