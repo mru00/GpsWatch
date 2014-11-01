@@ -1,4 +1,4 @@
-#! /bin/bash -xu
+#! /bin/bash -xue
 
 desc=$(date +%Y%m%d_%H%M%S)_$*
 mkdir $desc
@@ -15,7 +15,7 @@ cp last/current.bin $desc/last.bin
 
 ./decode_memmap.pl $desc/current.bin > $desc/decode.log
 
-diff <(hexdump -C $desc/last.bin) <(hexdump -C $desc/current.bin) | tee $desc/diff.txt
+diff <(hexdump -C $desc/last.bin) <(hexdump -C $desc/current.bin) > $desc/diff.txt
 
 echo "$*" > $desc/info.txt
 $EDITOR $desc/info.txt

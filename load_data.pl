@@ -67,9 +67,13 @@ my $commands = [
 
 
 
-for (my $i = 0; $i < 700; $i ++) {
-  push (@$commands, { type => 'read_addr', addr=> 128*$i, len => 128, i => $i} );
+my $num_trans = 0x5000;
+my $size_trans = 128;
+for (my $i = 0; $i < $num_trans; $i ++) {
+  push (@$commands, { type => 'read_addr', addr=> $size_trans*$i, len => $size_trans, i => $i} );
 }
+
+printf( "reading %d / 0x%x bytes ( %d blocks of %d bytes )\n", $num_trans*$size_trans, $num_trans * $size_trans, $num_trans, $size_trans);
 
 open(my $dump, ">", "from_watch.bin") or die "failed to open dump file: $!";
 binmode ($dump, ':bytes');
@@ -78,6 +82,7 @@ foreach my $command ( @$commands) {
   my $send = send_packet_h($port,$command);
   my $recv = receive_packet_h($port);
   GpsWatch::conversation($send->{hl}, $recv->{hl}, $dump);
+  print ".";
 }
 
 

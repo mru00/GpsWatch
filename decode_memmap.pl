@@ -5,6 +5,7 @@ use warnings;
 
 use GpsWatch;
 use Data::Dumper;
+use List::Util qw(sum);
 
 $Data::Dumper::Sortkeys = 1;
 
@@ -20,7 +21,8 @@ sub hex_3_to_sint32 {
 
 sub format_arr {
   my ($arr) = @_;
-  return join(',', map {sprintf "%03d", $_} @{$arr});
+  die "no arr specified" unless scalar @$arr;
+  return join(',', map { die 'undef in format_arr'.Dumper(caller) unless defined $_; sprintf "%03d", $_} @{$arr});
 
 }
 
@@ -30,8 +32,36 @@ sub parse_sample {
   my $result = {
     id => $id,
     type => $block_data->[$start_addr+0],
-    offset => sprintf ("%04x", $start_addr),
+    addr => $start_addr,
   };
+
+  my %lengths = (
+    #plausible:
+    0x00, 25,
+    0x80, 25,
+    0x01, 21,
+    0x02, 8,
+    0x03, 8,
+
+
+    0xb1, 9,
+    0x60, 7,
+    0xdf, 7,
+    0xd5, 5,
+    0xf7, 5,
+    0xcd, 5, 
+    0x0d, 3,
+    0x12, 19,
+    0x34, 19,
+
+    #unplausible
+    0x42, 21,
+    0x29, 19,
+    0x39, 19,
+  );
+
+  die "result does not have a type specified @ $start_addr".Dumper(caller) unless defined $result->{type};
+  $result->{length} = $lengths{$result->{type}} if defined $lengths{$result->{type}};
 
   if ($result->{type} == 0x00 || $result->{type} == 0x80) {
     $result->{timestamp} = sprintf("20%02d-%02d-%02d %02d:%02d:%02d",
@@ -42,7 +72,6 @@ sub parse_sample {
       $block_data->[$start_addr+6],
       $block_data->[$start_addr+7],
     );
-    $result->{length} = 25; 
   }
   elsif ($result->{type} == 0x01) {
     $result->{timestamp} = sprintf("--:%02d:%02d",
@@ -51,20 +80,14 @@ sub parse_sample {
     );
     $result->{d1} = hex_3_to_sint32($block_data->[$start_addr+7], $block_data->[$start_addr+6], $block_data->[$start_addr+5]);
     $result->{d2} = hex_3_to_sint32($block_data->[$start_addr+11], $block_data->[$start_addr+10], $block_data->[$start_addr+9]);
-
-    $result->{length} = 21;
   }
   elsif ($result->{type} == 0x02) {
-    $result->{length} = 3;
     $result->{timestamp} = sprintf("--:%02d:%02d",
       $block_data->[$start_addr+1],
       $block_data->[$start_addr+2],
     );
   }
   elsif ($result->{type} == 0x03) {
-
-    $result->{length} = 8;
-
     $result->{timestamp} = sprintf("20%02d-%02d-%02d %02d:%02d:%02d",
       $block_data->[$start_addr+1],
       $block_data->[$start_addr+2],
@@ -76,12 +99,18 @@ sub parse_sample {
 
     $result->{hr} = $block_data->[$start_addr+7];
   }
+  elsif (defined $lengths{$result->{type}}) {
+    $result->{length} = $lengths{$result->{type}};
+  }
   else {
-    warn sprintf ("unknown sample type $result->{type} @ 0x%04x", $start_addr);
+    die sprintf ("unknown sample type $result->{type} @ 0x%04x", $start_addr);
     # random number:
     $result->{length} = 0; 
   }
 
+  die "no length for $result->{type} @ $start_addr" unless $result->{length};
+
+  print ".";
   $result->{dump} = format_arr [ @{$block_data}[$start_addr .. $start_addr + $result->{length} -1] ];
   $result->{lookahead} = format_arr [ @{$block_data}[$start_addr + $result->{length} .. $start_addr + $result->{length} +0x10] ];
   return $result;
@@ -92,16 +121,16 @@ sub parse_entry_block {
 
   my $start_addr = 0x1000 * $block_id;
   printf("parsing block %d from 0x%04x (img size: 0x%04x)\n", $block_id, $start_addr, scalar @$data);
-  printf("nextblock: %d is_first: %d\n", $data->[$start_addr+1], $first_block == 0);
+  printf("nextblock: %d\n", $data->[$start_addr+1]) if $first_block == 0;;
 
   my $result = {
     is_first => !$first_block,
     profile => $data->[$start_addr + 0x0f],
-    start_addr => sprintf("%04x", $start_addr),
+    start_addr => $start_addr,
     id => $block_id,
     fb => $data->[$start_addr + 0],
     next_block => $data->[$start_addr + 1],
-    first_line => format_arr [@{$data}[$start_addr .. $start_addr+32]]
+    #first_line => format_arr [@{$data}[$start_addr .. $start_addr+32]]
   };
 
   if (! $first_block) {
@@ -136,12 +165,14 @@ sub parse_entry_block {
     my $block_offset = $start_addr;
     for (my $i = 0; $i <= $numsamples; $i++) {
 
+      die "block_offset > length(data): $block_offset" if $block_offset > scalar @$data;
       my $sample = parse_sample($data, $block_offset, $i);
       $block_offset += $sample->{length};
       $result->{seen_sample_types}->{$sample->{type}} ++;
 
       push(@{$result->{samples}}, $sample);
     }
+    printf("[%d]\n", scalar @{$result->{samples}});
     $result->{next_bytes} = format_arr [ @{$data}[$block_offset .. $block_offset+0x20] ];
   }
 
@@ -166,7 +197,6 @@ sub parse_block_alloc {
 sub parse_block_0 {
   my ($data) = @_;
 
-
   my $result = { };
 
   $result->{checksum} = $data->[0];
@@ -180,8 +210,15 @@ sub parse_block_0 {
   $result->{allocf} = join(",", map {scalar reverse sprintf "%08b", $_ } @{$data}[0xe0..0xef] );
   $result->{allocb} = join(",", map {scalar reverse sprintf "%08b", $_ } @{$data}[0xf0..0xff] );
 
+  printf ("cs: $result->{checksum} vs. %d\n", 0xff & sum(@{$data}[0x02..0xff]));
+  printf ("cs: $result->{checksum} vs. %d\n", 0xff & sum(@{$data}[0x02..0xef]));
+  printf ("cs: $result->{checksum} vs. %d\n", 0xff & sum(@{$data}[0x02..0x6f]));
+  printf ("cs: $result->{checksum} vs. %d\n", 0xff & sum(@{$data}[0x02..0x5f]));
+  printf ("cs: $result->{checksum} vs. %d\n", 0xff & sum(@{$data}[0x02..0x4f]));
+  printf ("cs: $result->{checksum} vs. %d\n", 0xff & sum(@{$data}[0x02..0x3f]));
+  printf ("cs: $result->{checksum} vs. %d\n", 0xff & sum(@{$data}[0x02..0x2f]));
+  printf ("cs: $result->{checksum} vs. %d\n", 0xff & sum(@{$data}[0x02..0x1f]));
   warn 'checksum error' unless $result->{checksum} == ( 0xff & ~ $result->{checksum_inv}) ;
-
 
   if (@$data > 0x1000) {
     $result->{wos} = [];
@@ -197,7 +234,7 @@ sub parse_block_0 {
 
       if ($wo_entry != 0xff) {
         if (@$current_wo == 0) {
-        push (@{$result->{wos}}, $current_wo);
+          push (@{$result->{wos}}, $current_wo);
         }
         my $repl_block_id = $wo_entry;
 
@@ -205,10 +242,14 @@ sub parse_block_0 {
         else { $repl_block_id = $next_block || $wo_entry; }
 
         my $parsed = parse_entry_block($data, $repl_block_id, $first_block);
-        $first_block ||= $parsed;
+        if (! $first_block) {
+          $first_block = $parsed;
+          printf ("need to parse %d=0x%02x samples\n", $first_block->{numsamples}, $first_block->{numsamples});
+        }
 
+        printf ("leader: %03d/0x%02x - %02x\n", $data->[$parsed->{start_addr}], $data->[$parsed->{start_addr}], $data->[$parsed->{start_addr}+1]);
         push (@$current_wo, $parsed);
-        $next_block = $parsed->{next_block};
+        #$next_block = $parsed->{next_block};
       }
       elsif ($last_block_num != 0xff) {
         $current_wo = [];
@@ -226,12 +267,12 @@ sub parse_block_0 {
 
   $result->{pathnames} = [];
   for(my $i = 0; $i < 10; $i ++) {
-    push(@{$result->{pathnames}}, pack('C*', @{$data}[0x600 + $i*32 .. 0x600 + ($i+1)*32]));
+    push(@{$result->{pathnames}}, pack('C*', @{$data}[0x600 + $i*32 .. 0x600 + ($i+1)*32-1]));
   }
 
   $result->{activities} = [];
   for (my $i = 0; $i < 5; $i++) {
-    push(@{$result->{activities}}, pack('C*', @{$data}[0x900 + $i*10 .. 0x900 + ($i+1)*10]));
+    push(@{$result->{activities}}, pack('C*', @{$data}[0x900 + $i*10 .. 0x900 + ($i+1)*10-1]));
   }
 
 
