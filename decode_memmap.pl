@@ -21,20 +21,28 @@ $Data::Dumper::Sortkeys = 1;
 # 8000: 80 00 0E 0A 1E 00 27 1B  00 94 35 77 00 94 35 77
 
 
-sub get_byte_at {
-  my ($data, $addr, $l) = @_;
+sub hex_3_to_sint32 {
+  my ($a,$b,$c) = @_;
 
-  if ($l) {
-    return GpsWatch::hex_to_intarray(unpack('H*', substr($data, $addr, $l)))
-  }
-  return hex unpack('H*', substr($data, $addr, 1));
+  my $r = sprintf("%02x%02x%02x%02x", $a & 0x80 ? 255:0, $a, $b, $c);
+  $r = hex $r;
+  $r -= 0x100000000 if $r & 0x80000000;
+  return $r;
+}
+
+sub format_arr {
+  my ($arr) = @_;
+  return join(',', map {sprintf "%03d", $_} @{$arr});
+
 }
 
 sub parse_sample {
-  my ($block_data, $start_addr) = @_;
+  my ($block_data, $start_addr, $id) = @_;
 
   my $result = {
-    type => $block_data->[$start_addr+0]
+    id => $id,
+    type => $block_data->[$start_addr+0],
+    offset => sprintf ("%04x", $start_addr),
   };
 
   if ($result->{type} == 0x03) {
@@ -52,18 +60,60 @@ sub parse_sample {
 
     $result->{hr} = $block_data->[$start_addr+7];
   }
-  elsif ($result->{type} == 0x00) {
+  elsif ($result->{type} == 0x80) {
+    $result->{length} = 25;
 
-    warn "unknown sample type $result->{type}";
-    # random number:
-    $result->{length} = 0; 
+    $result->{timestamp} = sprintf("20%02d-%02d-%02d %02d:%02d:%02d",
+      $block_data->[$start_addr+2],
+      $block_data->[$start_addr+3],
+      $block_data->[$start_addr+4],
+      $block_data->[$start_addr+5],
+      $block_data->[$start_addr+6],
+      $block_data->[$start_addr+7],
+    );
+  }
+  elsif ($result->{type} == 0x35) {
+    die;$result->{length} = 0;
+  }
+  elsif ($result->{type} == 0x00) {
+    $result->{timestamp} = sprintf("20%02d-%02d-%02d %02d:%02d:%02d",
+      $block_data->[$start_addr+2],
+      $block_data->[$start_addr+3],
+      $block_data->[$start_addr+4],
+      $block_data->[$start_addr+5],
+      $block_data->[$start_addr+6],
+      $block_data->[$start_addr+7],
+    );
+    $result->{length} = 25; 
+  }
+  elsif ($result->{type} == 0x01) {
+    $result->{timestamp} = sprintf("--:%02d:%02d",
+      $block_data->[$start_addr+2],
+      $block_data->[$start_addr+3],
+    );
+    $result->{d1} = hex_3_to_sint32($block_data->[$start_addr+7], $block_data->[$start_addr+6], $block_data->[$start_addr+5]);
+    $result->{d2} = hex_3_to_sint32($block_data->[$start_addr+11], $block_data->[$start_addr+10], $block_data->[$start_addr+9]);
+
+    $result->{length} = 21;
+  }
+  elsif ($result->{type} == 0x0a) {
+    $result->{length} = 3;
+  }
+  elsif ($result->{type} == 0x02) {
+    $result->{length} = 3;
+    $result->{timestamp} = sprintf("--:%02d:%02d",
+      $block_data->[$start_addr+1],
+      $block_data->[$start_addr+2],
+    );
   }
   else {
-    die "unknown sample type $result->{type}";
+    warn sprintf ("unknown sample type $result->{type} @ 0x%04x", $start_addr);
     # random number:
     $result->{length} = 0; 
   }
 
+  $result->{dump} = format_arr [ @{$block_data}[$start_addr .. $start_addr + $result->{length} -1] ];
+  $result->{lookahead} = format_arr [ @{$block_data}[$start_addr + $result->{length} .. $start_addr + $result->{length} +0x10] ];
   return $result;
 }
 
@@ -71,51 +121,61 @@ sub parse_entry_block {
   my ($data, $block_id, $first_block) = @_;
 
   my $start_addr = 0x1000 * $block_id;
-  my $block_data = get_byte_at($data, $start_addr, 0x1000);
+  printf("parsing block %d from 0x%04x (img size: 0x%04x)\n", $block_id, $start_addr, scalar @$data);
+  printf("nextblock: %d is_first: %d\n", $data->[$start_addr+1], $first_block == 0);
 
   my $result = {
-    profile => $block_data->[0x0f],
-    start_addr => $start_addr,
+    is_first => !$first_block,
+    profile => $data->[$start_addr + 0x0f],
+    start_addr => sprintf("%04x", $start_addr),
     id => $block_id,
-    fb => $block_data->[0],
-    first_line => join(",", map { sprintf("%3d", $_) } @{get_byte_at($data, $start_addr, 2*32)} )
+    fb => $data->[$start_addr + 0],
+    next_block => $data->[$start_addr + 1],
+    first_line => format_arr [@{$data}[$start_addr .. $start_addr+32]]
   };
 
   if (! $first_block) {
 
-    $result->{numsamples} = $block_data->[0];
-    $result->{lapcount} = $block_data->[2];
+    $result->{numsamples} = $data->[$start_addr + 0];
+    $result->{lapcount} = $data->[$start_addr + 2];
     $result->{laptimes} = [];
 
+    printf("addr: $start_addr\n");
     $result->{date} = sprintf("20%02d-%02d-%02d %02d:%02d:%02d",
-      $block_data->[3+5],
-      $block_data->[3+4],
-      $block_data->[3+3],
-      $block_data->[3+2],
-      $block_data->[3+1],
-      $block_data->[3+0]
+      $data->[$start_addr + 3+5],
+      $data->[$start_addr + 3+4],
+      $data->[$start_addr + 3+3],
+      $data->[$start_addr + 3+2],
+      $data->[$start_addr + 3+1],
+      $data->[$start_addr + 3+0]
     );
 
     for (my $laps = 0; $laps < hex $result->{lapcount}; $laps ++) {
-      push(@{$result->{laptimes}}, sprintf("%02d.%02d.%02d", 
-          $block_data->[0x40+0x10*$laps + 1],
-          $block_data->[0x40+0x10*$laps +2],
-          sprintf ("%02x", $block_data->[0x40+0x10*$laps +3]), # bcd?
+      #my $questionable = 
+      #    sprintf ("%02x", hex $data->[$start_addr + 0x40+0x10*$laps +3]); # bcd?
+      push(@{$result->{laptimes}}, sprintf("%02d.%02d.%%02d", 
+          $data->[$start_addr + 0x40+0x10*$laps +1],
+          $data->[$start_addr + 0x40+0x10*$laps +2], #$questionable
         ));
     }
   }
   else {
     my $numsamples = $first_block->{numsamples};
     $result->{samples} = [];
-    my $block_offset = 25;
+    $result->{seen_sample_types} = {};
+    $result->{header} = format_arr [ @{$data}[$start_addr .. $start_addr + 25 -1] ];
+    my $block_offset = $start_addr + 25;
     for (my $i = 0; $i < $numsamples; $i++) {
 
-
-      my $sample = parse_sample($block_data, $block_offset);
+      my $sample = parse_sample($data, $block_offset, $i);
       $block_offset += $sample->{length};
+      $result->{seen_sample_types}->{$sample->{type}} ++;
 
-      push(@{$result->{samples}}, $sample);
+      push(@{$result->{samples}}, $sample) if $result->{fb} != 255;
+
+
     }
+    $result->{next_bytes} = format_arr [ @{$data}[$block_offset .. $block_offset+0x20] ];
   }
 
 
@@ -126,11 +186,10 @@ sub parse_entry_block {
 
 
 sub parse_block_alloc {
-  my ($block_data) = @_;
-
+  my ($data) = @_;
 
   my $n = 0;
-  while ( ($block_data->[0xe0 + $n/8] & ( 1<< ($n%8))) == 0) {
+  while ( ($data->[0xe0 + $n/8] & ( 1<< ($n%8))) == 0) {
     $n++;
   };
 
@@ -143,36 +202,50 @@ sub parse_block_0 {
 
   my $result = { };
 
-  my $block_data = get_byte_at($data, 0, 0x1000);
-  $result->{checksum} = $block_data->[0];
-  $result->{checksum_inv} = $block_data->[1];
-  $result->{timezone} = $block_data->[3];
-  $result->{selected_profile} = $block_data->[0x10+10];
+  $result->{checksum} = $data->[0];
+  $result->{checksum_inv} = $data->[1];
+  $result->{timezone} = $data->[3];
+  $result->{interval} = $data->[14];
+  $result->{selected_profile} = $data->[0x10+10];
 
-  $result->{nblocks} = parse_block_alloc($block_data);
-  $result->{toc} = join(",", @{$block_data}[0x100..0x120] );
+  $result->{nblocks} = parse_block_alloc($data);
+  $result->{toc} = join(",", @{$data}[0x100..0x120] );
+  $result->{allocf} = join(",", map {scalar reverse sprintf "%08b", $_ } @{$data}[0xe0..0xef] );
+  $result->{allocb} = join(",", map {scalar reverse sprintf "%08b", $_ } @{$data}[0xf0..0xff] );
 
   warn 'checksum error' unless $result->{checksum} == ( 0xff & ~ $result->{checksum_inv}) ;
 
 
-  if (length($data) > 0x1000) {
+  if (@$data > 0x1000) {
     $result->{wos} = [];
     my $current_wo = [];
     my $last_block_num = 0xff;
-    my $first_block;
-    push (@{$result->{wos}}, $current_wo);
-    # xxx limit $i artifially
+    my $first_block = 0;
+
+
+    my $next_block;
     for (my $i=0; scalar @{$result->{wos}} < $result->{nblocks}-1 ; $i++) {
-      my $wo_entry = $block_data->[0x100 + $i];
+
+      my $wo_entry = $data->[0x100 + $i];
+
       if ($wo_entry != 0xff) {
-        my $parsed = parse_entry_block($data, $wo_entry, $first_block);
+        if (@$current_wo == 0) {
+        push (@{$result->{wos}}, $current_wo);
+        }
+        my $repl_block_id = $wo_entry;
+
+        if (!$first_block) { $repl_block_id = $wo_entry; }
+        else { $repl_block_id = $next_block || $wo_entry; }
+
+        my $parsed = parse_entry_block($data, $repl_block_id, $first_block);
         $first_block ||= $parsed;
-        push(@$current_wo, $parsed);
+
+        push (@$current_wo, $parsed);
+        $next_block = $parsed->{next_block};
       }
       elsif ($last_block_num != 0xff) {
         $current_wo = [];
         $first_block = 0;
-        push (@{$result->{wos}}, $current_wo);
       }
       else {
         last;
@@ -185,15 +258,13 @@ sub parse_block_0 {
   }
 
   $result->{pathnames} = [];
-  my $pathnames = substr($data, 0x600, 0x130);
   for(my $i = 0; $i < 10; $i ++) {
-    push(@{$result->{pathnames}}, substr($pathnames, $i*32, 32));
+    push(@{$result->{pathnames}}, pack('C*', @{$data}[0x600 + $i*32 .. 0x600 + ($i+1)*32]));
   }
 
   $result->{activities} = [];
-  my $act_names = substr($data, 0x900, 0x032);
   for (my $i = 0; $i < 5; $i++) {
-    push(@{$result->{activities}}, substr($act_names, $i*10, 10));
+    push(@{$result->{activities}}, pack('C*', @{$data}[0x900 + $i*10 .. 0x900 + ($i+1)*10]));
   }
 
 
@@ -209,18 +280,47 @@ foreach my $fn (@ARGV) {
   my $data_file = <$fh>;
   close($fh);
   print $fn . "\n";
+  my $data = GpsWatch::hex_to_intarray(unpack('H*',$data_file));
 
-  my $parsed = parse_block_0($data_file);
+  my $parsed = parse_block_0($data);
   $parsed->{input_file} = $fn;
+  print Dumper($parsed->{toc});
+  print Dumper($parsed->{allocf});
+  print Dumper($parsed->{allocb});
+  #print Dumper($parsed->{wos}->[4]);
   print Dumper($parsed);
+
+
+
+
+  #my $sampl_off = $parsed->{wos}->[4]->{start_addr} + $parsed->{wos}->[4]->{samples}->[56]->{offset};
+  #print $sampl_off;
 
   if (ref $parsed->{wos} eq "ARRAY") {
     #print Dumper($parsed->{nblocks}, $parsed->{224}, scalar @{$parsed->{wos}}, $parsed->{toc});
     foreach my $wo (@{$parsed->{wos}}) {
-      print "\n";
+      #my $wo = $parsed->{wos}->[5];
+
+      my $nsamples = $wo->[0]->{numsamples};
+
+
+      #  print "\n";
       foreach my $entry (@$wo) {
-        print( ">". $entry->{id} . "/". $entry->{first_line} . "\n");
+        printf ( ">%02d\n", $entry->{id});
+        if ($entry->{is_first}) {
+        } 
+        else{
+          printf ( "  h %s\n", $entry->{header});
+          foreach my $sample (@{$entry->{samples}}){
+            printf ( " %02d %s\n", $sample->{id}, $sample->{dump});
+          }
+          printf ( "  f %s\n", $entry->{next_bytes});
+        }
       }
     }
+  }
+  else {
+
+    print $parsed->{wos} . "\n";
   }
 }
