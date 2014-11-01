@@ -90,6 +90,9 @@ my $commands = [
 
 
 
+# knowledge: memory wraps at 0x100000
+# 0x2000 x 0x80 = 0x100000
+# i.e., this is the full memory
 my $num_trans = 0x2000;
 my $size_trans = 128;
 for (my $i = 0; $i < $num_trans; $i ++) {

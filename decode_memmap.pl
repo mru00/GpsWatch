@@ -21,8 +21,8 @@ sub hex_3_to_sint32 {
 
 sub format_arr {
   my ($arr) = @_;
-  die "no arr specified" unless scalar @$arr;
-  return join(',', map { die 'undef in format_arr'.Dumper(caller) unless defined $_; sprintf "%03d", $_} @{$arr});
+  die "no arr specified".Dumper(caller) unless defined $arr;
+  return join(',', map { defined $_ ? sprintf( "%03d", $_ ): 'xxx'} @{$arr});
 
 }
 
@@ -31,7 +31,7 @@ sub parse_sample {
 
   my $result = {
     id => $id,
-    type => $data->[$start_addr+0],
+    type => $data->[$start_addr],
     addr => $start_addr,
   };
 
@@ -40,32 +40,13 @@ sub parse_sample {
     0x00, 25,
     0x80, 25,
     0x01, 21,
-    0x02, 8,
+    0x02, 3,
     0x03, 8,
-
-    0x29, 4,
-    0x0c, 20, 
-    0x1e, 36,
-    0x34, 19,
-    0x36, 1,
-
-    #0xb1, 9,
-    #0x60, 7,
-    #0xdf, 7,
-    #0xd5, 5,
-    #0xf7, 5,
-    #0xcd, 5, 
-    #0x0d, 3,
-    #0x12, 19,
-    #0x34, 19,
-
-    #unplausible
-    #0x42, 21,
-    #0x29, 19,
-    #0x39, 19,
+    0xff, 0
   );
 
-  die "result does not have a type specified @ $start_addr".Dumper(caller) unless defined $result->{type};
+  die "result does not have a type specified @ $start_addr".Dumper(caller)." " unless defined $result->{type};
+
   $result->{length} = $lengths{$result->{type}} if defined $lengths{$result->{type}};
 
   if ($result->{type} == 0x00 || $result->{type} == 0x80) {
@@ -77,7 +58,6 @@ sub parse_sample {
       $data->[$start_addr+6],
       $data->[$start_addr+7],
     );
-    print "\n".$result->{timestamp}."\n";
   }
   elsif ($result->{type} == 0x01) {
     $result->{timestamp} = sprintf("--:%02d:%02d",
@@ -87,7 +67,6 @@ sub parse_sample {
     $result->{d1} = hex_3_to_sint32($data->[$start_addr+7], $data->[$start_addr+6], $data->[$start_addr+5]);
     $result->{d2} = hex_3_to_sint32($data->[$start_addr+11], $data->[$start_addr+10], $data->[$start_addr+9]);
 
-    print "\n".$result->{timestamp}."\n";
   }
   elsif ($result->{type} == 0x02) {
     $result->{timestamp} = sprintf("--:%02d:%02d",
@@ -107,24 +86,13 @@ sub parse_sample {
 
     $result->{hr} = $data->[$start_addr+7];
   }
-  elsif (defined $lengths{$result->{type}}) {
-    print STDERR "strange type $result->{type}";
-    $result->{length} = $lengths{$result->{type}};
+  elsif ($result->{type} == 0xff) {
+    # last entry.
   }
   else {
     die sprintf ("unknown sample type $result->{type} @ 0x%04x # %d", $start_addr, $id);
-    # random number:
-    $result->{length} = 0; 
   }
 
-  die "no length for $result->{type} @ $start_addr" unless $result->{length};
-
-  if ($result->{type} != 1 && $result->{type} != 3) {
-    print "\n". format_arr( [@{$data}[$start_addr .. $start_addr +$result->{length}]-1])."\n";
-    printf("%d: %02x @ 0x%04x\n", $id, $result->{type}, $start_addr);
-  }
-
-  print ".";
   $result->{dump} = format_arr [ @{$data}[$start_addr .. $start_addr + $result->{length} -1] ];
   $result->{lookahead} = format_arr [ @{$data}[$start_addr + $result->{length} .. $start_addr + $result->{length} +0x10] ];
   return $result;
@@ -143,7 +111,7 @@ sub parse_entry_block {
     start_addr => $start_addr,
     id => $block_id,
     fb => $data->[$start_addr + 0],
-    #next_block => $data->[$start_addr + 1],
+    next_block => $data->[$start_addr + 1],
     #first_line => format_arr [@{$data}[$start_addr .. $start_addr+32]]
   };
 
@@ -189,6 +157,8 @@ sub parse_entry_block {
       $result->{seen_sample_types}->{$sample->{type}} ++;
 
       push(@{$result->{samples}}, $sample);
+
+      last if $sample->{type} == 0xff;
     }
     printf("[%d]\n", scalar @{$result->{samples}});
     $result->{next_bytes} = format_arr [ @{$data}[$block_offset .. $block_offset+0x20] ];
@@ -257,7 +227,10 @@ sub parse_block_0 {
           my $parsed = parse_entry_block($data, $wo_entry, 0);
 
           $first_block = $parsed;
-          printf ("need to parse %d=0x%02x samples\n", $first_block->{numsamples}, $first_block->{numsamples});
+          printf ("need to parse %d=0x%02x samples\n", $parsed->{numsamples}, $parsed->{numsamples});
+          printf ("next block: %d 0x%02x\n", $parsed->{next_block}, $parsed->{next_block});
+          printf ("timestamp: %s\n", $parsed->{date});
+          printf (Dumper($parsed->{laptimes}));
 
           push (@$current_wo, $parsed);
         }
@@ -303,16 +276,9 @@ sub parse_block_0 {
   return $result;
 }
 
+sub parse_file {
+  my ($data, $fn) = @_;
 
-foreach my $fn (@ARGV) {
-
-  open(my $fh, '<', $fn) or die "failed to open file $!";
-  binmode($fh);
-  local $/;
-  my $data_file = <$fh>;
-  close($fh);
-  print STDERR $fn . "\n";
-  my $data = GpsWatch::hex_to_intarray(unpack('H*',$data_file));
 
   my $parsed = parse_block_0($data);
   $parsed->{input_file} = $fn;
@@ -339,4 +305,24 @@ foreach my $fn (@ARGV) {
   else {
     print $parsed->{wos} . "\n";
   }
+
+}
+
+foreach my $fn (@ARGV) {
+
+  open(my $fh, '<', $fn) or die "failed to open file $!";
+  binmode($fh);
+  local $/;
+  my $data_file = <$fh>;
+  close($fh);
+  print STDERR $fn . "\n";
+  my $data = GpsWatch::hex_to_intarray(unpack('H*',$data_file));
+  eval {
+    parse_file($data, $fn);
+    1;
+  };
+  if ($@) {
+    warn "failed to parse file $fn: $@\n\n";
+  };
+
 }

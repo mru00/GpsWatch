@@ -70,7 +70,6 @@ sub parse_packet {
 my %rx_opcodes;
 my %tx_opcodes;
 my %payload_size;
-my %addr_seen;
 
 sub parse_w {
 	my ($packet) = @_;
@@ -89,7 +88,6 @@ sub parse_w {
 			len => $4
 		};
 
-		$addr_seen{$data->{hl}->{addr}} ++;
 	}
 	elsif ($data->{opcode} eq $OP_GET_VER) {
 		$data->{hl} = {
@@ -155,6 +153,8 @@ sub parse_r {
 
 }
 
+my %addr_seen;
+
 sub conversation {
 	my ($request, $response, $dump) = @_;
 
@@ -176,6 +176,12 @@ sub conversation {
 	elsif ($tx->{type} eq "read_addr") {
     my $len_actual = length($rx->{data});
     #print "read $tx->{len} from $tx->{addr}, received $len_actual => memmap\n";
+    
+    if (defined $addr_seen{$tx->{addr}}) {
+      die "multiple write";
+    }
+    $addr_seen{$tx->{addr}} = 1;
+
 		seek($dump, hex $tx->{addr}, 0);
 		syswrite($dump, pack('H*', $rx->{data}));
 	}
