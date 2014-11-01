@@ -1,4 +1,4 @@
-#! /bin/bash -xue
+#! /bin/bash -xu
 
 desc=$(date +%Y%m%d_%H%M%S)_$*
 mkdir $desc

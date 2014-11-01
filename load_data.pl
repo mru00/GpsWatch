@@ -12,43 +12,65 @@ use Data::Dumper;
 
 sub send_packet_l {
   my ($fh, $packet) = @_;
-
   $fh->write($packet);
+}
+
+my $bc = 0;
+sub read_one {
+  my ($port) = @_;
+  my $count;
+  my $b;
+  ($count, $b) = $port->read(1);
+  $bc ++;
+  die "failed to read byte, count=$count, bc=$bc" unless $count == 1;
+  my $r = unpack('H[2]',$b);
+  return $r;
+}
+
+sub expect {
+  my ($port, $expected) = @_;
+  my $val = read_one($port);
+  die sprintf("protocol error: 0x%x != 0x%x at b=$bc", $expected, $val) unless $val eq $expected;
+  return $val;
 }
 
 sub receive_packet_l {
   my ($fh) = @_;
   my $packet;
 
-  my $count;
-  my $current_byte;
-  my $last_byte;
-  while(1) {
+  $packet .= expect($fh, 'a0');
+  $packet .= expect($fh, 'a2');
 
-    ($count, $current_byte) = $fh->read(1);
+  my $l1 = read_one($fh);
+  my $l2 = read_one($fh);
 
-    $packet .= $current_byte;
-    if (unpack('H*', $current_byte) eq 'b3' && unpack('H*', $last_byte) eq 'b0') {
-      last;
-    }
-    $last_byte = $current_byte;
+  my $l = (hex $l1 << 8) + hex $l2;
+  $packet .= $l1. $l2;
+
+  $packet .= read_one($fh); # opcode
+  for (my $i = 1; $i < $l; $i++) {
+    $packet .= read_one($fh);
   }
+  $packet .= read_one($fh); # checksum
+  $packet .= read_one($fh); # checksum
+  $packet .= expect($fh, 'b0');
+  $packet .= expect($fh, 'b3');
 
-  return $packet;
+  return pack('H*', $packet);
 }
 
 
 sub send_packet_h {
-  my ($fh, $hl) = @_;
+  my ($port, $hl) = @_;
   my $ll = GpsWatch::generate_tx($hl);
-  send_packet_l($fh, $ll);
+  send_packet_l($port, $ll);
   return GpsWatch::parse_w($ll);
 }
 
 
 sub receive_packet_h {
-  my ($fh) = @_;
-  my $recv_l = GpsWatch::parse_r(receive_packet_l($fh));
+  my ($port) = @_;
+  my $recv_l = GpsWatch::parse_r(receive_packet_l($port));
   return $recv_l;
 }
 
@@ -58,6 +80,7 @@ $port->baudrate(115200);
 $port->parity('none');
 $port->databits(8);
 $port->stopbits(1);
+$port->read_const_time(100);
 
 
 my $commands = [
@@ -67,7 +90,7 @@ my $commands = [
 
 
 
-my $num_trans = 0x5000;
+my $num_trans = 0x2000;
 my $size_trans = 128;
 for (my $i = 0; $i < $num_trans; $i ++) {
   push (@$commands, { type => 'read_addr', addr=> $size_trans*$i, len => $size_trans, i => $i} );
