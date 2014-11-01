@@ -45,37 +45,7 @@ sub parse_sample {
     offset => sprintf ("%04x", $start_addr),
   };
 
-  if ($result->{type} == 0x03) {
-
-    $result->{length} = 8;
-
-    $result->{timestamp} = sprintf("20%02d-%02d-%02d %02d:%02d:%02d",
-      $block_data->[$start_addr+1],
-      $block_data->[$start_addr+2],
-      $block_data->[$start_addr+3],
-      $block_data->[$start_addr+4],
-      $block_data->[$start_addr+5],
-      $block_data->[$start_addr+6],
-    );
-
-    $result->{hr} = $block_data->[$start_addr+7];
-  }
-  elsif ($result->{type} == 0x80) {
-    $result->{length} = 25;
-
-    $result->{timestamp} = sprintf("20%02d-%02d-%02d %02d:%02d:%02d",
-      $block_data->[$start_addr+2],
-      $block_data->[$start_addr+3],
-      $block_data->[$start_addr+4],
-      $block_data->[$start_addr+5],
-      $block_data->[$start_addr+6],
-      $block_data->[$start_addr+7],
-    );
-  }
-  elsif ($result->{type} == 0x35) {
-    die;$result->{length} = 0;
-  }
-  elsif ($result->{type} == 0x00) {
+  if ($result->{type} == 0x00 || $result->{type} == 0x80) {
     $result->{timestamp} = sprintf("20%02d-%02d-%02d %02d:%02d:%02d",
       $block_data->[$start_addr+2],
       $block_data->[$start_addr+3],
@@ -96,15 +66,26 @@ sub parse_sample {
 
     $result->{length} = 21;
   }
-  elsif ($result->{type} == 0x0a) {
-    $result->{length} = 3;
-  }
   elsif ($result->{type} == 0x02) {
-    $result->{length} = 3;
     $result->{timestamp} = sprintf("--:%02d:%02d",
       $block_data->[$start_addr+1],
       $block_data->[$start_addr+2],
     );
+  }
+  elsif ($result->{type} == 0x03) {
+
+    $result->{length} = 8;
+
+    $result->{timestamp} = sprintf("20%02d-%02d-%02d %02d:%02d:%02d",
+      $block_data->[$start_addr+1],
+      $block_data->[$start_addr+2],
+      $block_data->[$start_addr+3],
+      $block_data->[$start_addr+4],
+      $block_data->[$start_addr+5],
+      $block_data->[$start_addr+6],
+    );
+
+    $result->{hr} = $block_data->[$start_addr+7];
   }
   else {
     warn sprintf ("unknown sample type $result->{type} @ 0x%04x", $start_addr);
@@ -164,7 +145,7 @@ sub parse_entry_block {
     $result->{samples} = [];
     $result->{seen_sample_types} = {};
     $result->{header} = format_arr [ @{$data}[$start_addr .. $start_addr + 25 -1] ];
-    my $block_offset = $start_addr + 25;
+    my $block_offset = $start_addr;
     for (my $i = 0; $i < $numsamples; $i++) {
 
       my $sample = parse_sample($data, $block_offset, $i);
