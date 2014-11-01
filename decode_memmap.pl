@@ -9,18 +9,6 @@ use Data::Dumper;
 $Data::Dumper::Sortkeys = 1;
 
 
-
-
-# 1000: 01 00 01 0C 14 00 1E 0A  0E 03 00 00 00 00 00 01
-# 2000: 80 00 0E 0A 1E 00 14 0D  00 94 35 77 00 94 35 77
-# 3000: 01 00 01 0E 18 00 1E 0A  0E 0A 00 00 00 00 00 01
-# 4000: 80 00 0E 0A 1E 00 18 0F  00 94 35 77 00 94 35 77
-# 5000: 02 00 01 0E 21 00 1E 0A  0E 10 00 00 00 00 00 01
-# 6000: 80 00 0E 0A 1E 00 21 0F  00 94 35 77 00 94 35 77
-# 7000: 02 00 02 1A 27 00 1E 0A  0E 10 00 00 00 00 00 01
-# 8000: 80 00 0E 0A 1E 00 27 1B  00 94 35 77 00 94 35 77
-
-
 sub hex_3_to_sint32 {
   my ($a,$b,$c) = @_;
 
@@ -67,6 +55,7 @@ sub parse_sample {
     $result->{length} = 21;
   }
   elsif ($result->{type} == 0x02) {
+    $result->{length} = 3;
     $result->{timestamp} = sprintf("--:%02d:%02d",
       $block_data->[$start_addr+1],
       $block_data->[$start_addr+2],
@@ -132,11 +121,11 @@ sub parse_entry_block {
     );
 
     for (my $laps = 0; $laps < hex $result->{lapcount}; $laps ++) {
-      #my $questionable = 
-      #    sprintf ("%02x", hex $data->[$start_addr + 0x40+0x10*$laps +3]); # bcd?
-      push(@{$result->{laptimes}}, sprintf("%02d.%02d.%%02d", 
+      my $questionable = 
+          sprintf ("%02x", hex $data->[$start_addr + 0x40+0x10*$laps +3]); # bcd?
+      push(@{$result->{laptimes}}, sprintf("%02d.%02d.%02d", 
           $data->[$start_addr + 0x40+0x10*$laps +1],
-          $data->[$start_addr + 0x40+0x10*$laps +2], #$questionable
+          $data->[$start_addr + 0x40+0x10*$laps +2], $questionable
         ));
     }
   }
@@ -144,17 +133,14 @@ sub parse_entry_block {
     my $numsamples = $first_block->{numsamples};
     $result->{samples} = [];
     $result->{seen_sample_types} = {};
-    $result->{header} = format_arr [ @{$data}[$start_addr .. $start_addr + 25 -1] ];
     my $block_offset = $start_addr;
-    for (my $i = 0; $i < $numsamples; $i++) {
+    for (my $i = 0; $i <= $numsamples; $i++) {
 
       my $sample = parse_sample($data, $block_offset, $i);
       $block_offset += $sample->{length};
       $result->{seen_sample_types}->{$sample->{type}} ++;
 
-      push(@{$result->{samples}}, $sample) if $result->{fb} != 255;
-
-
+      push(@{$result->{samples}}, $sample);
     }
     $result->{next_bytes} = format_arr [ @{$data}[$block_offset .. $block_offset+0x20] ];
   }
@@ -268,30 +254,15 @@ foreach my $fn (@ARGV) {
   print Dumper($parsed->{toc});
   print Dumper($parsed->{allocf});
   print Dumper($parsed->{allocb});
-  #print Dumper($parsed->{wos}->[4]);
   print Dumper($parsed);
 
 
-
-
-  #my $sampl_off = $parsed->{wos}->[4]->{start_addr} + $parsed->{wos}->[4]->{samples}->[56]->{offset};
-  #print $sampl_off;
-
   if (ref $parsed->{wos} eq "ARRAY") {
-    #print Dumper($parsed->{nblocks}, $parsed->{224}, scalar @{$parsed->{wos}}, $parsed->{toc});
     foreach my $wo (@{$parsed->{wos}}) {
-      #my $wo = $parsed->{wos}->[5];
 
-      my $nsamples = $wo->[0]->{numsamples};
-
-
-      #  print "\n";
       foreach my $entry (@$wo) {
         printf ( ">%02d\n", $entry->{id});
-        if ($entry->{is_first}) {
-        } 
-        else{
-          printf ( "  h %s\n", $entry->{header});
+        if (!$entry->{is_first}) {
           foreach my $sample (@{$entry->{samples}}){
             printf ( " %02d %s\n", $sample->{id}, $sample->{dump});
           }
@@ -301,7 +272,6 @@ foreach my $fn (@ARGV) {
     }
   }
   else {
-
     print $parsed->{wos} . "\n";
   }
 }
