@@ -321,6 +321,10 @@ sub parse_block_0 {
   return $result;
 }
 
+
+# braunau 48g15'30"N 13g2'6"E  351m  48.258333 13.035
+# linz    48g18'N    14g17'E   266m  48.3 14.283333
+
 sub parse_file {
   my ($data, $fn) = @_;
 
@@ -341,10 +345,10 @@ sub parse_file {
         printf ( ">%02d\n", $entry->{id});
         if (!$entry->{is_first}) {
           foreach my $sample (@{$entry->{samples}}){
-            printf ( "i %02d %d/%d/%d %4d %s [%s]\n", 
+            printf ( "i %02d %f/%f/%d %4d %s [%s]\n", 
               $wo_id, 
-              $sample->{f2} || 0, 
-              $sample->{f3} || 0, 
+              ($sample->{f2}|| 0) / 10000000.0, 
+              ($sample->{f3}|| 0) / 10000000.0, 
               $sample->{f4} || 0, 
               $sample->{id}, 
               $sample->{dump},
