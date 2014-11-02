@@ -137,8 +137,8 @@ sub parse_entry_block {
   my ($data, $block_id, $first_block) = @_;
 
   my $start_addr = 0x1000 * $block_id;
-  printf("\nparsing block %d from 0x%04x (img size: 0x%04x)\n", $block_id, $start_addr, scalar @$data);
-  printf("nextblock: %d\n", $data->[$start_addr+1]) if $first_block == 0;;
+  #printf("\nparsing block %d from 0x%04x (img size: 0x%04x)\n", $block_id, $start_addr, scalar @$data);
+  #printf("nextblock: %d\n", $data->[$start_addr+1]) if $first_block == 0;;
 
   my $result = {
     is_first => !$first_block,
@@ -160,7 +160,7 @@ sub parse_entry_block {
     $result->{lapcount} = $data->[$start_addr + 2];
     $result->{laptimes} = [];
 
-    printf("addr: 0x%04x\n", $start_addr);
+    #printf("addr: 0x%04x\n", $start_addr);
     $result->{date} = sprintf("20%02d-%02d-%02d %02d:%02d:%02d",
       $data->[$start_addr + 3+5],
       $data->[$start_addr + 3+4],
@@ -201,7 +201,7 @@ sub parse_entry_block {
         last;
       }
     }
-    printf("[%d]\n", scalar @{$result->{samples}});
+    #printf("[%d]\n", scalar @{$result->{samples}});
     $result->{next_bytes} = format_arr [ @{$data}[$block_offset .. $block_offset+0x20] ];
   }
 
@@ -245,7 +245,7 @@ sub parse_block_0 {
   $result->{allocb} = join(",", map {scalar reverse sprintf "%08b", $_ } @{$data}[0xf0..0xff] );
 
 
-  print $result->{toc}."\n";
+  #print $result->{toc}."\n";
 
 
   if (@$data > 0x1000) {
@@ -268,10 +268,10 @@ sub parse_block_0 {
           my $parsed = parse_entry_block($data, $wo_entry, 0);
 
           $first_block = $parsed;
-          printf ("need to parse %d=0x%02x samples\n", $parsed->{numsamples}, $parsed->{numsamples});
-          printf ("next block: %d 0x%02x\n", $parsed->{next_block}, $parsed->{next_block});
-          printf ("timestamp: %s\n", $parsed->{date});
-          printf (Dumper($parsed->{laptimes}));
+          #printf ("need to parse %d=0x%02x samples\n", $parsed->{numsamples}, $parsed->{numsamples});
+          #printf ("next block: %d 0x%02x\n", $parsed->{next_block}, $parsed->{next_block});
+          #printf ("timestamp: %s\n", $parsed->{date});
+          #printf (Dumper($parsed->{laptimes}));
 
           push (@$current_wo, $parsed);
         }
@@ -331,38 +331,50 @@ sub parse_file {
 
   my $parsed = parse_block_0($data);
   $parsed->{input_file} = $fn;
-  print Dumper($parsed->{toc});
-  print Dumper($parsed->{allocf});
-  print Dumper($parsed->{allocb});
-  print Dumper($parsed);
+  #print Dumper($parsed->{toc});
+  #print Dumper($parsed->{allocf});
+  #print Dumper($parsed->{allocb});
 
 
-  if (ref $parsed->{wos} eq "ARRAY") {
-    my $wo_id = 0;
-    foreach my $wo (@{$parsed->{wos}}) {
-
-      foreach my $entry (@$wo) {
-        printf ( ">%02d\n", $entry->{id});
-        if (!$entry->{is_first}) {
-          foreach my $sample (@{$entry->{samples}}){
-            printf ( "i %02d %f/%f/%d %4d %s [%s]\n", 
-              $wo_id, 
-              ($sample->{f2}|| 0) / 10000000.0, 
-              ($sample->{f3}|| 0) / 10000000.0, 
-              $sample->{f4} || 0, 
-              $sample->{id}, 
-              $sample->{dump},
-              $sample->{type} == 0x00 ? 'fix' : ''
-            );
-          }
-          printf ( "  f %s\n", $entry->{next_bytes});
-        }
-      }
-      $wo_id ++;
-    }
+  {
+    open (my $fh_dump, '>', $fn.'.dump');
+    print $fh_dump Dumper($parsed);
+    close ($fh_dump);
   }
-  else {
-    print $parsed->{wos} . "\n";
+  
+  {
+    open (my $fh_decode, '>', $fn.'.decode');
+
+
+    if (ref $parsed->{wos} eq "ARRAY") {
+      my $wo_id = 0;
+      foreach my $wo (@{$parsed->{wos}}) {
+
+        foreach my $entry (@$wo) {
+          printf ( $fh_decode ">%02d\n", $entry->{id});
+          if (!$entry->{is_first}) {
+            foreach my $sample (@{$entry->{samples}}){
+              printf ( $fh_decode "i %02d %f/%f/%d %4d %s [%s]\n", 
+                $wo_id, 
+                ($sample->{f2}|| 0) / 10000000.0, 
+                ($sample->{f3}|| 0) / 10000000.0, 
+                $sample->{f4} || 0, 
+                $sample->{id}, 
+                $sample->{dump},
+                $sample->{type} == 0x00 ? 'fix' : ''
+              );
+            }
+            printf ( $fh_decode "  f %s\n", $entry->{next_bytes});
+          }
+        }
+        $wo_id ++;
+      }
+    }
+    else {
+      print $fh_decode $parsed->{wos} . "\n";
+    }
+
+    close($fh_decode);
   }
 
   return $parsed;
@@ -378,12 +390,14 @@ sub save_gpx {
   print $fh <<EOF;
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" creator="rudi" version="1.1">
-<trk>
-<name>asd</name>
-<trkseg>
 EOF
 
+  my $i = 0;
   foreach my $wo (@{$parsed->{wos}}) {
+    $i ++;
+
+    printf $fh "<trk><name>Track n.%d</name><trkseg>\n", $i;
+
     foreach my $entry (@$wo) {
       if (!$entry->{is_first}) {
 
@@ -421,15 +435,12 @@ EOF
         }
       }
     }
+
+    printf $fh "</trkseg></trk>\n";
+
   }
 
-print $fh <<EOF;
-</trkseg>
-</trk>
-</gpx>
-
-EOF
-
+  print $fh '</gpx>';
 
   close($fh);
 
