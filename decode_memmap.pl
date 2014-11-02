@@ -10,6 +10,8 @@ use List::Util qw(sum);
 $Data::Dumper::Sortkeys = 1;
 
 
+my $long_lat_scale = 10000000.0;
+
 sub to_sint32 {
   my ($a) = @_;
   if (@$a == 4) {
@@ -354,11 +356,12 @@ sub parse_file {
           printf ( $fh_decode ">%02d\n", $entry->{id});
           if (!$entry->{is_first}) {
             foreach my $sample (@{$entry->{samples}}){
-              printf ( $fh_decode "i %02d %f/%f/%d %4d %s [%s]\n", 
+              printf ( $fh_decode "i %02d %3.f/%3.f/%d %06x %4d %s [%s]\n", 
                 $wo_id, 
-                ($sample->{f2}|| 0) / 10000000.0, 
-                ($sample->{f3}|| 0) / 10000000.0, 
-                $sample->{f4} || 0, 
+                ($sample->{lat}|| 0) / $long_lat_scale, 
+                ($sample->{lon}|| 0) / $long_lat_scale, 
+                $sample->{ele} || 0, 
+                $sample->{addr},
                 $sample->{id}, 
                 $sample->{dump},
                 $sample->{type} == 0x00 ? 'fix' : ''
@@ -389,14 +392,14 @@ sub save_gpx {
 
   print $fh <<EOF;
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="rudi" version="1.1">
+<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="crane gps watch" version="1.1">
 EOF
 
   my $i = 0;
   foreach my $wo (@{$parsed->{wos}}) {
     $i ++;
 
-    printf $fh "<trk><name>Track n.%d</name><trkseg>\n", $i;
+    printf $fh " <trk><name>Track n.%d</name><trkseg>\n", $i;
 
     foreach my $entry (@$wo) {
       if (!$entry->{is_first}) {
@@ -436,7 +439,7 @@ EOF
       }
     }
 
-    printf $fh "</trkseg></trk>\n";
+    printf $fh " </trkseg></trk>\n";
 
   }
 
