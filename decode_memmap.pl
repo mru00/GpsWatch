@@ -132,12 +132,10 @@ sub parse_sample {
   return $result;
 }
 
-sub parse_entry_block {
-  my ($data, $block_id, $first_block) = @_;
+sub parse_leader_block {
 
+  my ($data, $block_id, $first_block) = @_;
   my $addr = 0x1000 * $block_id;
-  #printf("\nparsing block %d from 0x%04x (img size: 0x%04x)\n", $block_id, $addr, scalar @$data);
-  #printf("nextblock: %d\n", $data->[$addr+1]) if $first_block == 0;;
 
   my $result = {
     is_first => !$first_block,
@@ -146,34 +144,45 @@ sub parse_entry_block {
     id => $block_id,
   };
 
-  if (! $first_block) {
+  # 6h45m56s
+  # = 24356 sec
+  # need to parse 23156=0x5a74 samples$
+  #
+  $result->{numsamples} = $data->[$addr + 0] + ($data->[$addr+1]<<8);
+  $result->{lapcount} = $data->[$addr + 2];
+  $result->{laptimes} = [];
+  $result->{laprecords} = [];
 
-    # 6h45m56s
-    # = 24356 sec
-    # need to parse 23156=0x5a74 samples$
-    #
-    $result->{numsamples} = $data->[$addr + 0] + ($data->[$addr+1]<<8);
-    $result->{lapcount} = $data->[$addr + 2];
-    $result->{laptimes} = [];
-    $result->{laprecords} = [];
+  $result->{date} = format_gps_time( reverse @{$data}[$addr+3 .. $addr+3+6] );
 
-    $result->{date} = format_gps_time( reverse @{$data}[$addr+3 .. $addr+3+6] );
+  for (my $laps = 0; $laps < hex $result->{lapcount}; $laps ++) {
 
-    for (my $laps = 0; $laps < hex $result->{lapcount}; $laps ++) {
+    my $lap_start = $addr + 0x40+0x10*$laps;
+    my $fractions = sprintf ("%02x", hex $data->[$lap_start +3]); # bcd?
 
-      my $lap_start = $addr + 0x40+0x10*$laps;
-      my $fractions = sprintf ("%02x", hex $data->[$lap_start +3]); # bcd?
-
-      push(@{$result->{laptimes}}, sprintf("%02d:%02d:%02d.%02d", 
-          $data->[$lap_start +0],
-          $data->[$lap_start +1],
-          $data->[$lap_start +2], $fractions
-        ));
-      push (@{$result->{laprecords}},  format_arr @{$data}[$lap_start .. $lap_start + 15]);
-    }
+    push(@{$result->{laptimes}}, sprintf("%02d:%02d:%02d.%02d", 
+        $data->[$lap_start +0],
+        $data->[$lap_start +1],
+        $data->[$lap_start +2], $fractions
+      ));
+    push (@{$result->{laprecords}},  format_arr @{$data}[$lap_start .. $lap_start + 15]);
   }
-  else {
-    my $numsamples = $first_block->{numsamples};
+
+  return $result;
+}
+
+sub parse_sample_block {
+  my ($data, $block_id, $leader) = @_;
+
+  my $addr = 0x1000 * $block_id;
+
+  my $result = {
+    profile => $data->[$addr + 0x0f],
+    addr => $addr,
+    id => $block_id,
+  };
+
+    my $numsamples = $leader->{numsamples};
     $result->{expected_num_samples} = $numsamples;
     $result->{samples} = [];
     $result->{seen_sample_types} = {};
@@ -193,7 +202,6 @@ sub parse_entry_block {
       }
     }
     $result->{next_bytes} = format_arr @{$data}[$block_offset .. $block_offset+0x20];
-  }
 
   return $result;
 }
@@ -234,11 +242,11 @@ sub parse_block_0 {
 
 
   if (@$data > 0x1000) {
-    $result->{wos} = [];
-    my $current_wo = [];
-    my $last_block_num = 0xff;
-    my $first_block = 0;
 
+    $result->{wos} = [];
+    my $last_block_num = 0xff;
+
+    my $leader = 1;
 
     for (my $i=0; scalar @{$result->{wos}} < $result->{nblocks}-1 ; $i++) {
 
@@ -246,28 +254,19 @@ sub parse_block_0 {
 
       if ($wo_entry != 0xff) {
 
-        if (@$current_wo == 0) { 
+        if ($leader == 1) { 
 
-          push (@{$result->{wos}}, $current_wo);
+          my $parsed = parse_leader_block($data, $wo_entry, 0);
 
-          my $parsed = parse_entry_block($data, $wo_entry, 0);
+          $parsed->{samples} = parse_sample_block($data, $wo_entry+1, $parsed);
 
-          $first_block = $parsed;
-
-          push (@$current_wo, $parsed);
-        }
-        elsif (@$current_wo == 1) {
-
-          my $parsed = parse_entry_block($data, $wo_entry, $first_block);
-          push (@$current_wo, $parsed);
-        }
-        else {
+          push (@{$result->{wos}}, $parsed);
+          $leader = 0;
         }
 
       }
       elsif ($last_block_num != 0xff) {
-        $current_wo = [];
-        $first_block = 0;
+        $leader = 1;
       }
       else {
         last;
@@ -325,7 +324,7 @@ sub parse_file {
       my $wo_id = 0;
       foreach my $wo (@{$parsed->{wos}}) {
 
-        foreach my $entry (@$wo) {
+        foreach my $entry ($wo->{samples}) {
           printf ( $fh_decode ">%02d\n", $entry->{id});
           if (!$entry->{is_first}) {
             foreach my $sample (@{$entry->{samples}}){
@@ -389,52 +388,51 @@ EOF
 
       printf $fh " <trk><name>Track n.%d</name><trkseg>\n", $i;
 
-      foreach my $entry (@$wo) {
-        if (!$entry->{is_first}) {
+      my $entry = $wo->{samples};
+      if (!$entry->{is_first}) {
 
-          my $has_initial_fix = 0;
-          my $lat = 0;
-          my $lon = 0;
-          my $ele = 0;
-          my $timestamp = 0;
+        my $has_initial_fix = 0;
+        my $lat = 0;
+        my $lon = 0;
+        my $ele = 0;
+        my $timestamp = 0;
 
-          foreach my $sample (@{$entry->{samples}}){
-            my $write = 0;
+        foreach my $sample (@{$entry->{samples}}){
+          my $write = 0;
 
-            if ($sample->{type} == 0x00 || $sample->{type} == 0x80) {
-              $has_initial_fix = 1;
-              $lat = $sample->{lat};
-              $lon = $sample->{lon};
-              $ele = $sample->{ele};
-              $timestamp = $sample->{timestamp};
-              $write = 1;
-            }
-            elsif ($sample->{type} == 0x01) {
-              $lat += $sample->{lat};
-              $lon += $sample->{lon};
-              $ele += $sample->{ele};
-              $timestamp =~ s/..:..Z$/$sample->{timestamp}Z/;
-              $write = 1 && $has_initial_fix;
-            }
-            elsif ($sample->{type} == 0x02) {
-              $timestamp =~ s/..:..Z$/$sample->{timestamp}Z/;
-              $write = 1 && $has_initial_fix;
-            }
-            elsif ($sample->{type} == 0x03) {
-              $timestamp = $sample->{timestamp};
-            }
+          if ($sample->{type} == 0x00 || $sample->{type} == 0x80) {
+            $has_initial_fix = 1;
+            $lat = $sample->{lat};
+            $lon = $sample->{lon};
+            $ele = $sample->{ele};
+            $timestamp = $sample->{timestamp};
+            $write = 1;
+          }
+          elsif ($sample->{type} == 0x01) {
+            $lat += $sample->{lat};
+            $lon += $sample->{lon};
+            $ele += $sample->{ele};
+            $timestamp =~ s/..:..Z$/$sample->{timestamp}Z/;
+            $write = 1 && $has_initial_fix;
+          }
+          elsif ($sample->{type} == 0x02) {
+            $timestamp =~ s/..:..Z$/$sample->{timestamp}Z/;
+            $write = 1 && $has_initial_fix;
+          }
+          elsif ($sample->{type} == 0x03) {
+            $timestamp = $sample->{timestamp};
+          }
 
-            if ($write) {
-              printf($fh '   <trkpt lat="%f" lon="%f"><ele>%d</ele><time>%s</time></trkpt>'."\n",
-                format_lon_lat($lat), 
-                format_lon_lat($lon), 
-                $ele, 
-                $timestamp);
-            }
-            else {
-              printf($fh '   <trkpt><time>%s</time></trkpt>'."\n",
-                $timestamp);
-            }
+          if ($write) {
+            printf($fh '   <trkpt lat="%f" lon="%f"><ele>%d</ele><time>%s</time></trkpt>'."\n",
+              format_lon_lat($lat), 
+              format_lon_lat($lon), 
+              $ele, 
+              $timestamp);
+          }
+          else {
+            printf($fh '   <trkpt><time>%s</time></trkpt>'."\n",
+              $timestamp);
           }
         }
       }
