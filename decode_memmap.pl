@@ -55,7 +55,7 @@ sub parse_sample {
   $result->{length} = $lengths{$result->{type}} if defined $lengths{$result->{type}};
 
   if ($result->{type} == 0x00 || $result->{type} == 0x80) {
-    $result->{timestamp} = sprintf("20%02d-%02d-%02d %02d:%02d:%02d",
+    $result->{timestamp} = sprintf("20%02d-%02d-%02dT%02d:%02d:%02dZ",
       $data->[$start_addr+2],
       $data->[$start_addr+3],
       $data->[$start_addr+4],
@@ -69,9 +69,9 @@ sub parse_sample {
     my $a = $long_or_short_timestamp + $start_addr;
     $result->{f1} = $d->[$start_addr+1];
     # then comes long timestamp for 000, short for 001
-    $result->{f2} = to_sint32([@{$d}[$a+4 .. $a+7]]);
-    $result->{f3} = to_sint32([@{$d}[$a+8 .. $a+11]]);
-    $result->{f4} = to_sint32([@{$d}[$a+12 .. $a+13]]);
+    $result->{lon} = to_sint32([@{$d}[$a+4 .. $a+7]]);
+    $result->{lat} = to_sint32([@{$d}[$a+8 .. $a+11]]);
+    $result->{ele} = to_sint32([@{$d}[$a+12 .. $a+13]]);
     $result->{f5} = $d->[$a+14];
     $result->{f6} = $d->[$a+15];
     $result->{f7} = $d->[$a+16];
@@ -83,7 +83,7 @@ sub parse_sample {
 
   }
   elsif ($result->{type} == 0x01) {
-    $result->{timestamp} = sprintf("--:%02d:%02d",
+    $result->{timestamp} = sprintf("%02d:%02d",
       $data->[$start_addr+2],
       $data->[$start_addr+3],
     );
@@ -93,9 +93,9 @@ sub parse_sample {
     my $a = $long_or_short_timestamp + $start_addr;
     $result->{f1} = $d->[$start_addr+1];
     # then comes long timestamp for 000, short for 001
-    $result->{f2} = to_sint32([@{$d}[$a+4 .. $a+7]]);
-    $result->{f3} = to_sint32([@{$d}[$a+8 .. $a+11]]);
-    $result->{f4} = to_sint32([@{$d}[$a+12 .. $a+13]]);
+    $result->{lon} = to_sint32([@{$d}[$a+4 .. $a+7]]);
+    $result->{lat} = to_sint32([@{$d}[$a+8 .. $a+11]]);
+    $result->{ele} = to_sint32([@{$d}[$a+12 .. $a+13]]);
     $result->{f5} = $d->[$a+14];
     $result->{f6} = $d->[$a+15];
     $result->{f7} = $d->[$a+16];
@@ -105,7 +105,7 @@ sub parse_sample {
     $result->{f11} = $d->[$a+20];
   }
   elsif ($result->{type} == 0x02) {
-    $result->{timestamp} = sprintf("--:%02d:%02d",
+    $result->{timestamp} = sprintf("%02d:%02d",
       $data->[$start_addr+1],
       $data->[$start_addr+2],
     );
@@ -365,6 +365,74 @@ sub parse_file {
     print $parsed->{wos} . "\n";
   }
 
+  return $parsed;
+}
+
+sub save_gpx {
+
+  my ($parsed, $fn) = @_;
+
+
+  open(my $fh, '>', $fn) or die "failed to open: $!";;
+
+  print $fh <<EOF;
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="rudi" version="1.1">
+<trk>
+<name>asd</name>
+<trkseg>
+EOF
+
+  foreach my $wo (@{$parsed->{wos}}) {
+    foreach my $entry (@$wo) {
+      if (!$entry->{is_first}) {
+
+        my $has_initial_fix = 0;
+        my $lat = 0;
+        my $lon = 0;
+        my $ele = 0;
+        my $timestamp = 0;
+
+        foreach my $sample (@{$entry->{samples}}){
+          my $write = 0;
+
+          if ($sample->{type} == 0x00) {
+            $has_initial_fix = 1;
+            $lat = $sample->{lat};
+            $lon = $sample->{lon};
+            $ele = $sample->{ele};
+            $timestamp = $sample->{timestamp};
+            $write = 1;
+          }
+          elsif ($sample->{type} == 0x01) {
+            $lat += $sample->{lat};
+            $lon += $sample->{lon};
+            $ele += $sample->{ele};
+            $timestamp =~ s/..:..Z$/$sample->{timestamp}Z/;
+            $write = 1 && $has_initial_fix;
+          }
+
+          if ($write) {
+            printf($fh '   <trkpt lat="%f" lon="%f"><ele>%d</ele><time>%s</time></trkpt>'."\n",
+              $lat/10000000.0, $lon/10000000.0, $ele, $timestamp);
+          }
+
+
+        }
+      }
+    }
+  }
+
+print $fh <<EOF;
+</trkseg>
+</trk>
+</gpx>
+
+EOF
+
+
+  close($fh);
+
 }
 
 foreach my $fn (@ARGV) {
@@ -377,7 +445,8 @@ foreach my $fn (@ARGV) {
   print STDERR $fn . "\n";
   my $data = GpsWatch::hex_to_intarray(unpack('H*',$data_file));
   eval {
-    parse_file($data, $fn);
+    my $result = parse_file($data, $fn);
+    save_gpx($result, $fn.".gpx");
     1;
   };
   if ($@) {
