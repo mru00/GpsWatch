@@ -10,13 +10,18 @@ use List::Util qw(sum);
 $Data::Dumper::Sortkeys = 1;
 
 
-sub hex_3_to_sint32 {
-  my ($a,$b,$c) = @_;
-
-  my $r = sprintf("%02x%02x%02x%02x", $a & 0x80 ? 255:0, $a, $b, $c);
-  $r = hex $r;
-  $r -= 0x100000000 if $r & 0x80000000;
-  return $r;
+sub to_sint32 {
+  my ($a) = @_;
+  if (@$a == 4) {
+    return unpack('l', pack ('L', $a->[0] + ($a->[1]<<8) + ($a->[2]<<16) +($a->[3]<<24)));
+  }
+  elsif (@$a ==2) {
+    return unpack('s', pack ('S', $a->[0] + ($a->[1]<<8)));
+  }
+  elsif (@$a ==1) {
+    return unpack('c', pack ('C', $a->[0] + ($a->[1]<<8)));
+  }
+  die "not implemented";
 }
 
 sub format_arr {
@@ -58,15 +63,46 @@ sub parse_sample {
       $data->[$start_addr+6],
       $data->[$start_addr+7],
     );
+
+    my $d = $data;
+    my $long_or_short_timestamp = 4;
+    my $a = $long_or_short_timestamp + $start_addr;
+    $result->{f1} = $d->[$start_addr+1];
+    # then comes long timestamp for 000, short for 001
+    $result->{f2} = to_sint32([@{$d}[$a+4 .. $a+7]]);
+    $result->{f3} = to_sint32([@{$d}[$a+8 .. $a+11]]);
+    $result->{f4} = to_sint32([@{$d}[$a+12 .. $a+13]]);
+    $result->{f5} = $d->[$a+14];
+    $result->{f6} = $d->[$a+15];
+    $result->{f7} = $d->[$a+16];
+    $result->{f8} = $d->[$a+17];
+    $result->{f9} = $d->[$a+18];
+    $result->{f10} = $d->[$a+19];
+    $result->{f11} = $d->[$a+20];
+
+
   }
   elsif ($result->{type} == 0x01) {
     $result->{timestamp} = sprintf("--:%02d:%02d",
       $data->[$start_addr+2],
       $data->[$start_addr+3],
     );
-    $result->{d1} = hex_3_to_sint32($data->[$start_addr+7], $data->[$start_addr+6], $data->[$start_addr+5]);
-    $result->{d2} = hex_3_to_sint32($data->[$start_addr+11], $data->[$start_addr+10], $data->[$start_addr+9]);
 
+    my $d = $data;
+    my $long_or_short_timestamp = 0;
+    my $a = $long_or_short_timestamp + $start_addr;
+    $result->{f1} = $d->[$start_addr+1];
+    # then comes long timestamp for 000, short for 001
+    $result->{f2} = to_sint32([@{$d}[$a+4 .. $a+7]]);
+    $result->{f3} = to_sint32([@{$d}[$a+8 .. $a+11]]);
+    $result->{f4} = to_sint32([@{$d}[$a+12 .. $a+13]]);
+    $result->{f5} = $d->[$a+14];
+    $result->{f6} = $d->[$a+15];
+    $result->{f7} = $d->[$a+16];
+    $result->{f8} = $d->[$a+17];
+    $result->{f9} = $d->[$a+18];
+    $result->{f10} = $d->[$a+19];
+    $result->{f11} = $d->[$a+20];
   }
   elsif ($result->{type} == 0x02) {
     $result->{timestamp} = sprintf("--:%02d:%02d",
@@ -94,7 +130,6 @@ sub parse_sample {
   }
 
   $result->{dump} = format_arr [ @{$data}[$start_addr .. $start_addr + $result->{length} -1] ];
-  $result->{lookahead} = format_arr [ @{$data}[$start_addr + $result->{length} .. $start_addr + $result->{length} +0x10] ];
   return $result;
 }
 
@@ -135,10 +170,12 @@ sub parse_entry_block {
       $data->[$start_addr + 3+0]
     );
 
+
     for (my $laps = 0; $laps < hex $result->{lapcount}; $laps ++) {
       my $questionable = 
           sprintf ("%02x", hex $data->[$start_addr + 0x40+0x10*$laps +3]); # bcd?
-      push(@{$result->{laptimes}}, sprintf("%02d.%02d.%02d", 
+      push(@{$result->{laptimes}}, sprintf("%02d:%02d:%02d.%02d", 
+          $data->[$start_addr + 0x40+0x10*$laps +0],
           $data->[$start_addr + 0x40+0x10*$laps +1],
           $data->[$start_addr + 0x40+0x10*$laps +2], $questionable
         ));
@@ -146,6 +183,7 @@ sub parse_entry_block {
   }
   else {
     my $numsamples = $first_block->{numsamples};
+    $result->{expected_num_samples} = $numsamples;
     $result->{samples} = [];
     $result->{seen_sample_types} = {};
     my $block_offset = $start_addr;
@@ -158,7 +196,10 @@ sub parse_entry_block {
 
       push(@{$result->{samples}}, $sample);
 
-      last if $sample->{type} == 0xff;
+      if ($sample->{type} == 0xff) {
+        $result->{incomplete_data} = 1;
+        last;
+      }
     }
     printf("[%d]\n", scalar @{$result->{samples}});
     $result->{next_bytes} = format_arr [ @{$data}[$block_offset .. $block_offset+0x20] ];
@@ -259,12 +300,16 @@ sub parse_block_0 {
 
   $result->{pathnames} = [];
   for(my $i = 0; $i < 10; $i ++) {
-    push(@{$result->{pathnames}}, pack('C*', @{$data}[0x600 + $i*32 .. 0x600 + ($i+1)*32-1]));
+    my $name = pack('C*', @{$data}[0x600 + $i*32 .. 0x600 + ($i+1)*32-1]);
+    $name =~ s/\x00//g;
+    push(@{$result->{pathnames}}, $name);
   }
 
   $result->{activities} = [];
   for (my $i = 0; $i < 5; $i++) {
-    push(@{$result->{activities}}, pack('C*', @{$data}[0x900 + $i*10 .. 0x900 + ($i+1)*10-1]));
+    my $name = pack('C*', @{$data}[0x900 + $i*10 .. 0x900 + ($i+1)*10-1]);
+    $name =~ s/\xff//g;
+    push(@{$result->{activities}}, $name);
   }
 
 
@@ -289,17 +334,27 @@ sub parse_file {
 
 
   if (ref $parsed->{wos} eq "ARRAY") {
+    my $wo_id = 0;
     foreach my $wo (@{$parsed->{wos}}) {
 
       foreach my $entry (@$wo) {
         printf ( ">%02d\n", $entry->{id});
         if (!$entry->{is_first}) {
           foreach my $sample (@{$entry->{samples}}){
-            printf ( " %02d %s\n", $sample->{id}, $sample->{dump});
+            printf ( "i %02d %d/%d/%d %4d %s [%s]\n", 
+              $wo_id, 
+              $sample->{f2} || 0, 
+              $sample->{f3} || 0, 
+              $sample->{f4} || 0, 
+              $sample->{id}, 
+              $sample->{dump},
+              $sample->{type} == 0x00 ? 'fix' : ''
+            );
           }
           printf ( "  f %s\n", $entry->{next_bytes});
         }
       }
+      $wo_id ++;
     }
   }
   else {
