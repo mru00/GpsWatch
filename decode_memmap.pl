@@ -13,24 +13,29 @@ $Data::Dumper::Sortkeys = 1;
 my $long_lat_scale = 10000000.0;
 
 sub to_sint32 {
-  my ($a) = @_;
-  if (@$a == 4) {
-    return unpack('l', pack ('L', $a->[0] + ($a->[1]<<8) + ($a->[2]<<16) +($a->[3]<<24)));
+  if (@_ == 4) {
+    return unpack('l', pack ('L', $_[0] + ($_[1]<<8) + ($_[2]<<16) +($_[3]<<24)));
   }
-  elsif (@$a ==2) {
-    return unpack('s', pack ('S', $a->[0] + ($a->[1]<<8)));
+  elsif (@_ ==2) {
+    return unpack('s', pack ('S', $_[0] + ($_[1]<<8)));
   }
-  elsif (@$a ==1) {
-    return unpack('c', pack ('C', $a->[0] + ($a->[1]<<8)));
+  elsif (@_ ==1) {
+    return unpack('c', pack ('C', $_[0]));
   }
   die "not implemented";
 }
 
 sub format_arr {
-  my ($arr) = @_;
-  die "no arr specified".Dumper(caller) unless defined $arr;
-  return join(',', map { defined $_ ? sprintf( "%03d", $_ ): 'xxx'} @{$arr});
+  die "no arr specified".Dumper(caller) unless defined @_;
+  return join(',', map { defined $_ ? sprintf( "%03d", $_ ): 'xxx'} @_);
 
+}
+
+
+sub format_gps_time {
+  my @arr = @_;
+  die "format_gps_time error: must give ref to 6-elem arr" unless (scalar @arr) != 6;
+  return sprintf("20%02d-%02d-%02dT%02d:%02d:%02dZ", @arr);
 }
 
 sub parse_sample {
@@ -43,7 +48,6 @@ sub parse_sample {
   };
 
   my %lengths = (
-    #plausible:
     0x00, 25,
     0x80, 25,
     0x01, 21,
@@ -57,30 +61,23 @@ sub parse_sample {
   $result->{length} = $lengths{$result->{type}} if defined $lengths{$result->{type}};
 
   if ($result->{type} == 0x00 || $result->{type} == 0x80) {
-    $result->{timestamp} = sprintf("20%02d-%02d-%02dT%02d:%02d:%02dZ",
-      $data->[$start_addr+2],
-      $data->[$start_addr+3],
-      $data->[$start_addr+4],
-      $data->[$start_addr+5],
-      $data->[$start_addr+6],
-      $data->[$start_addr+7],
-    );
+    $result->{timestamp} = format_gps_time( @{$data}[$start_addr+2 .. $start_addr+8] );
 
     my $d = $data;
     my $long_or_short_timestamp = 4;
     my $a = $long_or_short_timestamp + $start_addr;
     $result->{f1} = $d->[$start_addr+1];
     # then comes long timestamp for 000, short for 001
-    $result->{lon} = to_sint32([@{$d}[$a+4 .. $a+7]]);
-    $result->{lat} = to_sint32([@{$d}[$a+8 .. $a+11]]);
-    $result->{ele} = to_sint32([@{$d}[$a+12 .. $a+13]]);
+    $result->{lon} = to_sint32(@{$d}[$a+4 .. $a+7]);
+    $result->{lat} = to_sint32(@{$d}[$a+8 .. $a+11]);
+    $result->{ele} = to_sint32(@{$d}[$a+12 .. $a+13]);
     $result->{f5} = $d->[$a+14];
     $result->{f6} = $d->[$a+15];
     $result->{f7} = $d->[$a+16];
     $result->{f8} = $d->[$a+17];
     $result->{f9} = $d->[$a+18];
     $result->{f10} = $d->[$a+19];
-    $result->{f11} = $d->[$a+20];
+    $result->{hr} = $d->[$a+20];
 
 
   }
@@ -95,16 +92,16 @@ sub parse_sample {
     my $a = $long_or_short_timestamp + $start_addr;
     $result->{f1} = $d->[$start_addr+1];
     # then comes long timestamp for 000, short for 001
-    $result->{lon} = to_sint32([@{$d}[$a+4 .. $a+7]]);
-    $result->{lat} = to_sint32([@{$d}[$a+8 .. $a+11]]);
-    $result->{ele} = to_sint32([@{$d}[$a+12 .. $a+13]]);
+    $result->{lon} = to_sint32(@{$d}[$a+4 .. $a+7]);
+    $result->{lat} = to_sint32(@{$d}[$a+8 .. $a+11]);
+    $result->{ele} = to_sint32(@{$d}[$a+12 .. $a+13]);
     $result->{f5} = $d->[$a+14];
     $result->{f6} = $d->[$a+15];
     $result->{f7} = $d->[$a+16];
     $result->{f8} = $d->[$a+17];
     $result->{f9} = $d->[$a+18];
     $result->{f10} = $d->[$a+19];
-    $result->{f11} = $d->[$a+20];
+    $result->{hr} = $d->[$a+20];
   }
   elsif ($result->{type} == 0x02) {
     $result->{timestamp} = sprintf("%02d:%02d",
@@ -113,25 +110,20 @@ sub parse_sample {
     );
   }
   elsif ($result->{type} == 0x03) {
-    $result->{timestamp} = sprintf("20%02d-%02d-%02d %02d:%02d:%02d",
-      $data->[$start_addr+1],
-      $data->[$start_addr+2],
-      $data->[$start_addr+3],
-      $data->[$start_addr+4],
-      $data->[$start_addr+5],
-      $data->[$start_addr+6],
-    );
+    $result->{timestamp} = format_gps_time( @{$data}[$start_addr+1 .. $start_addr+7] );
 
     $result->{hr} = $data->[$start_addr+7];
   }
   elsif ($result->{type} == 0xff) {
     # last entry.
+    # XXX here, something is still wrong.
+    # :
   }
   else {
     die sprintf ("unknown sample type $result->{type} @ 0x%04x # %d", $start_addr, $id);
   }
 
-  $result->{dump} = format_arr [ @{$data}[$start_addr .. $start_addr + $result->{length} -1] ];
+  $result->{dump} = format_arr  @{$data}[$start_addr .. $start_addr + $result->{length} -1];
   return $result;
 }
 
@@ -161,8 +153,8 @@ sub parse_entry_block {
     $result->{numsamples} = $data->[$start_addr + 0] + ($data->[$start_addr+1]<<8);
     $result->{lapcount} = $data->[$start_addr + 2];
     $result->{laptimes} = [];
+    $result->{laprecords} = [];
 
-    #printf("addr: 0x%04x\n", $start_addr);
     $result->{date} = sprintf("20%02d-%02d-%02d %02d:%02d:%02d",
       $data->[$start_addr + 3+5],
       $data->[$start_addr + 3+4],
@@ -172,15 +164,17 @@ sub parse_entry_block {
       $data->[$start_addr + 3+0]
     );
 
-
     for (my $laps = 0; $laps < hex $result->{lapcount}; $laps ++) {
-      my $questionable = 
-          sprintf ("%02x", hex $data->[$start_addr + 0x40+0x10*$laps +3]); # bcd?
+
+      my $lap_start = $start_addr + 0x40+0x10*$laps;
+      my $fractions = sprintf ("%02x", hex $data->[$lap_start +3]); # bcd?
+
       push(@{$result->{laptimes}}, sprintf("%02d:%02d:%02d.%02d", 
-          $data->[$start_addr + 0x40+0x10*$laps +0],
-          $data->[$start_addr + 0x40+0x10*$laps +1],
-          $data->[$start_addr + 0x40+0x10*$laps +2], $questionable
+          $data->[$lap_start +0],
+          $data->[$lap_start +1],
+          $data->[$lap_start +2], $fractions
         ));
+      push (@{$result->{laprecords}},  format_arr @{$data}[$lap_start .. $lap_start + 15]);
     }
   }
   else {
@@ -203,11 +197,8 @@ sub parse_entry_block {
         last;
       }
     }
-    #printf("[%d]\n", scalar @{$result->{samples}});
-    $result->{next_bytes} = format_arr [ @{$data}[$block_offset .. $block_offset+0x20] ];
+    $result->{next_bytes} = format_arr @{$data}[$block_offset .. $block_offset+0x20];
   }
-
-
 
   return $result;
 }
@@ -242,12 +233,9 @@ sub parse_block_0 {
   $result->{selected_profile} = $data->[0x10+10];
 
   $result->{nblocks} = parse_block_alloc($data);
-  $result->{toc} = join(",", @{$data}[0x100..0x120] );
+  $result->{toc} = join(",", @{$data}[0x100..0x13f] );
   $result->{allocf} = join(",", map {scalar reverse sprintf "%08b", $_ } @{$data}[0xe0..0xef] );
   $result->{allocb} = join(",", map {scalar reverse sprintf "%08b", $_ } @{$data}[0xf0..0xff] );
-
-
-  #print $result->{toc}."\n";
 
 
   if (@$data > 0x1000) {
@@ -270,10 +258,6 @@ sub parse_block_0 {
           my $parsed = parse_entry_block($data, $wo_entry, 0);
 
           $first_block = $parsed;
-          #printf ("need to parse %d=0x%02x samples\n", $parsed->{numsamples}, $parsed->{numsamples});
-          #printf ("next block: %d 0x%02x\n", $parsed->{next_block}, $parsed->{next_block});
-          #printf ("timestamp: %s\n", $parsed->{date});
-          #printf (Dumper($parsed->{laptimes}));
 
           push (@$current_wo, $parsed);
         }
@@ -330,13 +314,8 @@ sub parse_block_0 {
 sub parse_file {
   my ($data, $fn) = @_;
 
-
   my $parsed = parse_block_0($data);
   $parsed->{input_file} = $fn;
-  #print Dumper($parsed->{toc});
-  #print Dumper($parsed->{allocf});
-  #print Dumper($parsed->{allocb});
-
 
   {
     open (my $fh_dump, '>', $fn.'.dump');
@@ -347,7 +326,6 @@ sub parse_file {
   {
     open (my $fh_decode, '>', $fn.'.decode');
 
-
     if (ref $parsed->{wos} eq "ARRAY") {
       my $wo_id = 0;
       foreach my $wo (@{$parsed->{wos}}) {
@@ -356,11 +334,13 @@ sub parse_file {
           printf ( $fh_decode ">%02d\n", $entry->{id});
           if (!$entry->{is_first}) {
             foreach my $sample (@{$entry->{samples}}){
-              printf ( $fh_decode "i %02d %3.f/%3.f/%d %06x %4d %s [%s]\n", 
+
+              printf ( $fh_decode "i %02d %3.f/%3.f/%d/%d %06x %4d %s [%s]\n", 
                 $wo_id, 
                 ($sample->{lat}|| 0) / $long_lat_scale, 
                 ($sample->{lon}|| 0) / $long_lat_scale, 
                 $sample->{ele} || 0, 
+                $sample->{hr} || 0,
                 $sample->{addr},
                 $sample->{id}, 
                 $sample->{dump},
@@ -384,9 +364,7 @@ sub parse_file {
 }
 
 sub save_gpx {
-
   my ($parsed, $fn) = @_;
-
 
   open(my $fh, '>', $fn) or die "failed to open: $!";;
 
@@ -394,6 +372,20 @@ sub save_gpx {
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" creator="crane gps watch" version="1.1">
 EOF
+
+  printf( $fh qq|
+<metadata>
+  <name>%s</name>
+  <author>%s</author>
+  <copyright author="%s">
+    <year>2014</year>
+    <license>beer license</license>
+  </copyright>
+</metadata>
+|,
+    "GPS Track from Crane GPS Watch",
+    'mru@sisyphus.teil.cc',
+    'mru@sisyphus.teil.cc');
 
   my $i = 0;
   foreach my $wo (@{$parsed->{wos}}) {
@@ -413,7 +405,7 @@ EOF
         foreach my $sample (@{$entry->{samples}}){
           my $write = 0;
 
-          if ($sample->{type} == 0x00) {
+          if ($sample->{type} == 0x00 || $sample->{type} == 0x80) {
             $has_initial_fix = 1;
             $lat = $sample->{lat};
             $lon = $sample->{lon};
@@ -428,13 +420,22 @@ EOF
             $timestamp =~ s/..:..Z$/$sample->{timestamp}Z/;
             $write = 1 && $has_initial_fix;
           }
+          elsif ($sample->{type} == 0x02) {
+            $timestamp =~ s/..:..Z$/$sample->{timestamp}Z/;
+            $write = 1 && $has_initial_fix;
+          }
+          elsif ($sample->{type} == 0x03) {
+            $timestamp = $sample->{timestamp};
+          }
 
           if ($write) {
             printf($fh '   <trkpt lat="%f" lon="%f"><ele>%d</ele><time>%s</time></trkpt>'."\n",
               $lat/10000000.0, $lon/10000000.0, $ele, $timestamp);
           }
-
-
+          else {
+            printf($fh '   <trkpt><time>%s</time></trkpt>'."\n",
+              $timestamp);
+          }
         }
       }
     }
@@ -444,10 +445,9 @@ EOF
   }
 
   print $fh '</gpx>';
-
   close($fh);
-
 }
+
 
 foreach my $fn (@ARGV) {
 
