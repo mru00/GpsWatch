@@ -107,7 +107,7 @@ binmode ($dump, ':bytes');
 foreach my $command ( @$commands) {
   my $send = send_packet_h($port,$command);
   my $recv = receive_packet_h($port);
-  GpsWatch::conversation($send->{hl}, $recv->{hl}, $dump);
+  GpsWatch::conversation($send, $recv, $dump);
   print ".";
 }
 

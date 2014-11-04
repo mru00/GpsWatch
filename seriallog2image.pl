@@ -18,7 +18,7 @@ sub parse_line {
       type => "noop"
     };
   }
-  if (/\[(..\/..\/.... ..:..:..)\] - Open port (\w*) (\(C:\\Program Files\\GPS Master 2.0.14\\GPS Master.exe)\)/) {
+  if (/\[(..\/..\/.... ..:..:..)\] - Open port (\w*) (\(.*)\)/) {
     return {
       time => $1,
       port => $2,
@@ -210,13 +210,13 @@ for (my $i = 0; $i < @$tx_part; $i ++) {
 
   if (defined $open_req{$rx_opcode}) {
     print "using buffered tx\n";
-    GpsWatch::conversation($open_req{$rx_opcode}->{hl}, $rx_data->{hl}, $memmap_file);
+    GpsWatch::conversation($open_req{$rx_opcode}, $rx_data, $memmap_file);
     delete $open_req{$rx_opcode};
 
     $open_req{GpsWatch::make_rx_opcode($tx_data->{opcode})} = $tx_data;
   }
   else {
-    GpsWatch::conversation($tx_data->{hl}, $rx_data->{hl}, $memmap_file);
+    GpsWatch::conversation($tx_data, $rx_data, $memmap_file);
   }
 
 }

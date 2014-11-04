@@ -41,7 +41,7 @@
    <trkpt lat="48.259901" lon="13.059834"><ele>510</ele><time>2014-11-01T00:35:13Z</time></trkpt>
  </trkseg></trk>
  <trk><name>Track n.4</name><trkseg>
-   <trkpt lat="200.000000" lon="200.000000"><ele>0</ele><time>2014-11-01T03:07:32Z</time></trkpt>
+   <trkpt><time>2014-11-01T03:07:32Z</time></trkpt>
    <trkpt><time>2014-11-01T03:07:33Z</time></trkpt>
    <trkpt><time>2014-11-01T03:07:34Z</time></trkpt>
    <trkpt><time>2014-11-01T03:07:35Z</time></trkpt>
@@ -2948,7 +2948,7 @@
    <trkpt><time>2014-11-01T03:01:59Z</time></trkpt>
  </trkseg></trk>
  <trk><name>Track n.5</name><trkseg>
-   <trkpt lat="200.000000" lon="200.000000"><ele>0</ele><time>2014-11-02T12:04:56Z</time></trkpt>
+   <trkpt><time>2014-11-02T12:04:56Z</time></trkpt>
    <trkpt><time>2014-11-02T12:04:57Z</time></trkpt>
    <trkpt><time>2014-11-02T12:04:58Z</time></trkpt>
    <trkpt><time>2014-11-02T12:04:59Z</time></trkpt>
@@ -3024,7 +3024,7 @@
    <trkpt><time>2014-11-02T12:06:09Z</time></trkpt>
  </trkseg></trk>
  <trk><name>Track n.6</name><trkseg>
-   <trkpt lat="200.000000" lon="200.000000"><ele>0</ele><time>2014-11-02T14:45:45Z</time></trkpt>
+   <trkpt><time>2014-11-02T14:45:45Z</time></trkpt>
    <trkpt><time>2014-11-02T14:45:46Z</time></trkpt>
    <trkpt><time>2014-11-02T14:45:47Z</time></trkpt>
    <trkpt><time>2014-11-02T14:45:48Z</time></trkpt>
@@ -5586,7 +5586,7 @@
    <trkpt><time>2014-11-02T15:28:24Z</time></trkpt>
  </trkseg></trk>
  <trk><name>Track n.7</name><trkseg>
-   <trkpt lat="200.000000" lon="200.000000"><ele>0</ele><time>2014-11-02T17:10:57Z</time></trkpt>
+   <trkpt><time>2014-11-02T17:10:57Z</time></trkpt>
    <trkpt><time>2014-11-02T17:10:58Z</time></trkpt>
    <trkpt><time>2014-11-02T17:10:59Z</time></trkpt>
    <trkpt><time>2014-11-02T17:11:00Z</time></trkpt>

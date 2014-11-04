@@ -154,12 +154,17 @@ sub parse_r {
 }
 
 my %addr_seen;
+open (my $dump_comm, '>', 'l2.log');
 
 sub conversation {
 	my ($request, $response, $dump) = @_;
 
-	my $rx = $response;
-	my $tx = $request;
+  print ($dump_comm "tx:".$request->{data}."\n");
+  print ($dump_comm "rx:".$response->{data}."\n");
+ 
+
+	my $rx = $response->{hl};
+	my $tx = $request->{hl};
 
   # tx-clear -> rx-read
   if ($rx->{type} ne $tx->{type}) {

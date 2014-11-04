@@ -7,7 +7,7 @@ use GpsWatch;
 use Data::Dumper;
 use List::Util qw(sum);
 
-# use XML::Writer; XXX
+use XML::Writer;
 #
 
 $Data::Dumper::Sortkeys = 1;
@@ -31,6 +31,19 @@ sub to_sint32 {
     return unpack('c', pack ('C', $_[0]));
   }
   die "not implemented";
+}
+
+sub to_uint {
+  if (@_ == 4) {
+    return $_[0] + ($_[1]<<8) + ($_[2]<<16) +($_[3]<<24);
+  }
+  elsif (@_ ==2) {
+    return $_[0] + ($_[1]<<8);
+  }
+  elsif (@_ ==1) {
+    return pack ('C', $_[0]);
+  }
+  die "not implemented : ".@_.Dumper(caller);
 }
 
 sub format_arr {
@@ -98,7 +111,7 @@ sub parse_sample {
     my $d = $data;
     my $long_or_short_timestamp = 0;
     my $a = $long_or_short_timestamp + $addr;
-    $result->{f1} = $d->[$addr+1];
+    $result->{fix_q_assumption} = $d->[$addr+1];
     # then comes long timestamp for 000, short for 001
     $result->{lon} = to_sint32(@{$d}[$a+4 .. $a+7]);
     $result->{lat} = to_sint32(@{$d}[$a+8 .. $a+11]);
@@ -139,7 +152,6 @@ sub parse_leader_block {
 
   my $result = {
     is_first => !$first_block,
-    profile => $data->[$addr + 0x0f],
     addr => $addr,
     id => $block_id,
   };
@@ -148,23 +160,49 @@ sub parse_leader_block {
   # = 24356 sec
   # need to parse 23156=0x5a74 samples$
   #
-  $result->{numsamples} = $data->[$addr + 0] + ($data->[$addr+1]<<8);
+  # nn nn ll ss  ss ss ss ss   -   ss ww ww ww  ?? ?? ?? pp
+  $result->{numsamples} = to_uint( @{$data}[$addr..$addr+1]);
   $result->{lapcount} = $data->[$addr + 2];
-  $result->{laptimes} = [];
+
+  $result->{start_time} = format_gps_time( reverse @{$data}[$addr+2 .. $addr+8] );
+  $result->{total_workout_time} = sprintf("%02d:%02d:%02d", reverse @{$data}[$addr+8 .. $addr+11] );
+  $result->{profile} = $data->[$addr + 15];
+
+  # km km km km  av av ma ma   -   ?? ?? ?? ??  ?? ?? ?? ??
+  $result->{total_km} = sprintf("%.3f", to_uint( @{$data}[$addr+16 .. $addr+19]) / 10000.0);
+  $result->{avg_speed} = sprintf("%.1f", to_uint( @{$data}[$addr+20 .. $addr+21] ) / 10.0);
+  $result->{max_speed} = sprintf("%.1f", to_uint ( @{$data}[$addr+22 .. $addr+23]) / 10.0);
+
+  # cc cc ?? ??  ?? ?? ?? ??   -   ?? ?? ?? ??  ?? ?? ?? ??
+  $result->{calories} = sprintf("%.1f", to_uint( @{$data}[$addr+32 .. $addr+33]) / 100.0);
+  $result->{dump} = format_arr(@{$data}[$addr..$addr+128]);
+
+
+  # missing:
+  # time hr inzone  hh:mm:ss
+  # hr above  hh mm ss
+  # hr below  hh mm ss
+  # hr min
+  # hr max 
+  # hr avg
+
+  $result->{laps} = [];
   $result->{laprecords} = [];
+  for (my $laps = 0; $laps < $result->{lapcount}; $laps ++) {
 
-  $result->{date} = format_gps_time( reverse @{$data}[$addr+3 .. $addr+3+6] );
+    # tt tt tt tt  ?? ?? ?? ??   -  km km km km  sp sp ??
+    my $lap_start = $addr + 0x40 + 0x10*$laps;
+    my $lap = {};
 
-  for (my $laps = 0; $laps < hex $result->{lapcount}; $laps ++) {
+    # missing: lap avg hr
+    # accum time
+    # accum distance
+    # accum speed
+    $lap->{laptime} = sprintf("%02d:%02d:%02d.%02x", @{$data}[$lap_start .. $lap_start+3] );
+    $lap->{km} = sprintf("%.3f", to_uint( @{$data}[$lap_start + 8 .. $lap_start+11]) / 10000.0);
+    $lap->{avg_speed} = sprintf("%.1f", to_uint( @{$data}[$lap_start+12 .. $lap_start+13] ) / 10.0);
 
-    my $lap_start = $addr + 0x40+0x10*$laps;
-    my $fractions = sprintf ("%02x", hex $data->[$lap_start +3]); # bcd?
-
-    push(@{$result->{laptimes}}, sprintf("%02d:%02d:%02d.%02d", 
-        $data->[$lap_start +0],
-        $data->[$lap_start +1],
-        $data->[$lap_start +2], $fractions
-      ));
+    push(@{$result->{laps}}, $lap);
     push (@{$result->{laprecords}},  format_arr @{$data}[$lap_start .. $lap_start + 15]);
   }
 
@@ -288,7 +326,7 @@ sub parse_block_0 {
   $result->{activities} = [];
   for (my $i = 0; $i < 5; $i++) {
     my $name = pack('C*', @{$data}[0x900 + $i*10 .. 0x900 + ($i+1)*10-1]);
-    $name =~ s/\xff//g;
+    $name =~ s/\xff|\x00//g;
     push(@{$result->{activities}}, $name);
   }
 
@@ -360,6 +398,9 @@ sub parse_file {
 sub save_gpx {
   my ($parsed, $fn) = @_;
 
+  my $xml = XML::Writer->new({
+
+    });
   open(my $fh, '>', $fn) or die "failed to open: $!";;
 
   print $fh <<EOF;
@@ -376,7 +417,7 @@ EOF
     <license>beer license</license>
     </copyright>
     </metadata>
-    |,
+|,
     "GPS Track from Crane GPS Watch",
     'mru@sisyphus.teil.cc',
     'mru@sisyphus.teil.cc');
@@ -400,7 +441,7 @@ EOF
         foreach my $sample (@{$entry->{samples}}){
           my $write = 0;
 
-          if ($sample->{type} == 0x00 || $sample->{type} == 0x80) {
+          if ($sample->{type} == 0x00) {
             $has_initial_fix = 1;
             $lat = $sample->{lat};
             $lon = $sample->{lon};
@@ -422,6 +463,9 @@ EOF
           elsif ($sample->{type} == 0x03) {
             $timestamp = $sample->{timestamp};
           }
+          elsif ($sample->{type} == 0x80) {
+            $timestamp = $sample->{timestamp};
+          }
 
           if ($write) {
             printf($fh '   <trkpt lat="%f" lon="%f"><ele>%d</ele><time>%s</time></trkpt>'."\n",
@@ -436,9 +480,9 @@ EOF
           }
         }
       }
+      printf $fh " </trkseg></trk>\n";
     }
 
-    printf $fh " </trkseg></trk>\n";
 
   }
   else {
