@@ -16,3 +16,12 @@ test it:
 
 ./from_watch some_title
 
+
+see also:
+
+"Viking GPS data editor and analyzer" http://sourceforge.net/projects/viking/
+
+https://github.com/mru00/gpxstat
+
+
+
