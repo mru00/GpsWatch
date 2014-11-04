@@ -1,5 +1,7 @@
 #! /usr/bin/perl
 #
+# Copyright (C) 2014 mru@sisyphus.teil.cc
+#
 use strict;
 use warnings;
 
@@ -405,7 +407,12 @@ sub save_gpx {
 
   print $fh <<EOF;
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="crane gps watch" version="1.1">
+<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="crane gps watch" version="1.1"
+xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" 
+xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd"
+>
 EOF
 
   printf( $fh qq|
@@ -467,20 +474,36 @@ EOF
             $timestamp = $sample->{timestamp};
           }
 
+
+          print $fh '<trkpt ';
           if ($write) {
-            printf($fh '   <trkpt lat="%f" lon="%f"><ele>%d</ele><time>%s</time></trkpt>'."\n",
+            printf($fh 'lat="%f" lon="%f"><ele>%d</ele>',
               format_lon_lat($lat), 
               format_lon_lat($lon), 
-              $ele, 
-              $timestamp);
+              $ele
+            );
           }
           else {
-            printf($fh '   <trkpt><time>%s</time></trkpt>'."\n",
-              $timestamp);
+            printf ($fh '>');
           }
+
+          printf($fh '<time>%s</time>', $timestamp);
+
+          if (defined $sample->{hr} && $sample->{hr} != 0) {
+            printf ($fh qq|
+              <extensions>
+              <gpxtpx:TrackPointExtension>
+              <gpxtpx:hr>%d</gpxtpx:hr>
+              </gpxtpx:TrackPointExtension>
+              </extensions>
+              |,$sample->{hr}
+            );
+
+          }
+          printf ($fh '</trkpt>'."\n");
         }
       }
-      printf $fh " </trkseg></trk>\n";
+      printf ($fh " </trkseg></trk>\n");
     }
 
 

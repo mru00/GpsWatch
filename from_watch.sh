@@ -1,5 +1,8 @@
 #! /bin/bash -xu
 
+# Copyright (C) 2014 mru@sisyphus.teil.cc
+
+
 title=$1
 desc=$(date +%Y%m%d_%H%M%S)_$title
 mkdir $desc

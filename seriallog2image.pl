@@ -1,5 +1,7 @@
 #! /usr/bin/perl
 #
+# Copyright (C) 2014 mru@sisyphus.teil.cc
+#
 
 use strict;
 use warnings;
