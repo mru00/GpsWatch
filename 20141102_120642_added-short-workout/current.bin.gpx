@@ -611,10 +611,10 @@ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/
 <trkpt lat="48.259178" lon="13.059359"><ele>339</ele><time>2014-11-01T03:18:36Z</time></trkpt>
 <trkpt lat="48.259169" lon="13.059368"><ele>339</ele><time>2014-11-01T03:18:37Z</time></trkpt>
 <trkpt lat="48.259159" lon="13.059376"><ele>339</ele><time>2014-11-01T03:18:38Z</time></trkpt>
-<trkpt lat="48.259159" lon="13.059376"><ele>339</ele><time>2014-11-01T03:18:39Z</time></trkpt>
-<trkpt lat="48.259159" lon="13.059376"><ele>339</ele><time>2014-11-01T03:18:40Z</time></trkpt>
-<trkpt lat="48.259159" lon="13.059376"><ele>339</ele><time>2014-11-01T03:18:41Z</time></trkpt>
-<trkpt lat="48.259159" lon="13.059376"><ele>339</ele><time>2014-11-01T03:18:42Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:18:39Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:18:40Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:18:41Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:18:42Z</time></trkpt>
 <trkpt lat="48.259135" lon="13.059368"><ele>339</ele><time>2014-11-01T03:18:43Z</time></trkpt>
 <trkpt lat="48.259138" lon="13.059360"><ele>339</ele><time>2014-11-01T03:18:44Z</time></trkpt>
 <trkpt lat="48.259138" lon="13.059360"><ele>339</ele><time>2014-11-01T03:18:45Z</time></trkpt>
@@ -642,14 +642,14 @@ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/
 <trkpt lat="48.259047" lon="13.059349"><ele>339</ele><time>2014-11-01T03:19:07Z</time></trkpt>
 <trkpt lat="48.259037" lon="13.059347"><ele>339</ele><time>2014-11-01T03:19:08Z</time></trkpt>
 <trkpt lat="48.259029" lon="13.059347"><ele>339</ele><time>2014-11-01T03:19:09Z</time></trkpt>
-<trkpt lat="48.259029" lon="13.059347"><ele>339</ele><time>2014-11-01T03:19:10Z</time></trkpt>
-<trkpt lat="48.259029" lon="13.059347"><ele>339</ele><time>2014-11-01T03:19:11Z</time></trkpt>
-<trkpt lat="48.259029" lon="13.059347"><ele>339</ele><time>2014-11-01T03:19:12Z</time></trkpt>
-<trkpt lat="48.259029" lon="13.059347"><ele>339</ele><time>2014-11-01T03:19:13Z</time></trkpt>
-<trkpt lat="48.259029" lon="13.059347"><ele>339</ele><time>2014-11-01T03:19:14Z</time></trkpt>
-<trkpt lat="48.259029" lon="13.059347"><ele>339</ele><time>2014-11-01T03:19:15Z</time></trkpt>
-<trkpt lat="48.259029" lon="13.059347"><ele>339</ele><time>2014-11-01T03:19:16Z</time></trkpt>
-<trkpt lat="48.259029" lon="13.059347"><ele>339</ele><time>2014-11-01T03:19:17Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:19:10Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:19:11Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:19:12Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:19:13Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:19:14Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:19:15Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:19:16Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:19:17Z</time></trkpt>
 <trkpt lat="48.259002" lon="13.059910"><ele>341</ele><time>2014-11-01T03:19:32Z</time></trkpt>
 <trkpt lat="48.259002" lon="13.059910"><ele>343</ele><time>2014-11-01T03:19:33Z</time></trkpt>
 <trkpt lat="48.259007" lon="13.059898"><ele>346</ele><time>2014-11-01T03:19:34Z</time></trkpt>
@@ -1278,15 +1278,15 @@ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/
 <trkpt lat="48.259069" lon="13.059629"><ele>352</ele><time>2014-11-01T03:29:57Z</time></trkpt>
 <trkpt lat="48.259069" lon="13.059629"><ele>352</ele><time>2014-11-01T03:29:58Z</time></trkpt>
 <trkpt lat="48.259072" lon="13.059637"><ele>352</ele><time>2014-11-01T03:29:59Z</time></trkpt>
-<trkpt lat="48.259072" lon="13.059637"><ele>352</ele><time>2014-11-01T03:30:00Z</time></trkpt>
-<trkpt lat="48.259072" lon="13.059637"><ele>352</ele><time>2014-11-01T03:30:01Z</time></trkpt>
-<trkpt lat="48.259072" lon="13.059637"><ele>352</ele><time>2014-11-01T03:30:02Z</time></trkpt>
-<trkpt lat="48.259072" lon="13.059637"><ele>352</ele><time>2014-11-01T03:30:03Z</time></trkpt>
-<trkpt lat="48.259072" lon="13.059637"><ele>352</ele><time>2014-11-01T03:30:04Z</time></trkpt>
-<trkpt lat="48.259072" lon="13.059637"><ele>352</ele><time>2014-11-01T03:30:05Z</time></trkpt>
-<trkpt lat="48.259072" lon="13.059637"><ele>352</ele><time>2014-11-01T03:30:06Z</time></trkpt>
-<trkpt lat="48.259072" lon="13.059637"><ele>352</ele><time>2014-11-01T03:30:07Z</time></trkpt>
-<trkpt lat="48.259072" lon="13.059637"><ele>352</ele><time>2014-11-01T03:30:08Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:30:00Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:30:01Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:30:02Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:30:03Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:30:04Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:30:05Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:30:06Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:30:07Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:30:08Z</time></trkpt>
 <trkpt lat="48.259220" lon="13.059052"><ele>351</ele><time>2014-11-01T03:34:17Z</time></trkpt>
 <trkpt lat="48.259213" lon="13.059060"><ele>351</ele><time>2014-11-01T03:34:18Z</time></trkpt>
 <trkpt lat="48.259213" lon="13.059060"><ele>350</ele><time>2014-11-01T03:34:19Z</time></trkpt>
@@ -2370,8 +2370,8 @@ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/
 <trkpt lat="48.259114" lon="13.059375"><ele>341</ele><time>2014-11-01T03:52:17Z</time></trkpt>
 <trkpt lat="48.259114" lon="13.059375"><ele>341</ele><time>2014-11-01T03:52:18Z</time></trkpt>
 <trkpt lat="48.259114" lon="13.059375"><ele>341</ele><time>2014-11-01T03:52:19Z</time></trkpt>
-<trkpt lat="48.259114" lon="13.059375"><ele>341</ele><time>2014-11-01T03:52:20Z</time></trkpt>
-<trkpt lat="48.259114" lon="13.059375"><ele>341</ele><time>2014-11-01T03:52:21Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:52:20Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:52:21Z</time></trkpt>
 <trkpt lat="48.259125" lon="13.059375"><ele>341</ele><time>2014-11-01T03:52:22Z</time></trkpt>
 <trkpt lat="48.259125" lon="13.059375"><ele>341</ele><time>2014-11-01T03:52:23Z</time></trkpt>
 <trkpt lat="48.259125" lon="13.059375"><ele>341</ele><time>2014-11-01T03:52:24Z</time></trkpt>
@@ -2526,7 +2526,7 @@ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/
 <trkpt lat="48.259167" lon="13.059417"><ele>343</ele><time>2014-11-01T03:54:53Z</time></trkpt>
 <trkpt lat="48.259167" lon="13.059417"><ele>343</ele><time>2014-11-01T03:54:54Z</time></trkpt>
 <trkpt lat="48.259167" lon="13.059417"><ele>343</ele><time>2014-11-01T03:54:55Z</time></trkpt>
-<trkpt lat="48.259167" lon="13.059417"><ele>343</ele><time>2014-11-01T03:54:56Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:54:56Z</time></trkpt>
 <trkpt lat="48.259160" lon="13.059420"><ele>343</ele><time>2014-11-01T03:54:57Z</time></trkpt>
 <trkpt lat="48.259160" lon="13.059420"><ele>343</ele><time>2014-11-01T03:54:58Z</time></trkpt>
 <trkpt lat="48.259160" lon="13.059420"><ele>343</ele><time>2014-11-01T03:54:59Z</time></trkpt>
@@ -2942,14 +2942,14 @@ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/
 <trkpt lat="48.258908" lon="13.059524"><ele>345</ele><time>2014-11-01T03:01:49Z</time></trkpt>
 <trkpt lat="48.258894" lon="13.059519"><ele>345</ele><time>2014-11-01T03:01:50Z</time></trkpt>
 <trkpt lat="48.258884" lon="13.059515"><ele>345</ele><time>2014-11-01T03:01:51Z</time></trkpt>
-<trkpt lat="48.258884" lon="13.059515"><ele>345</ele><time>2014-11-01T03:01:52Z</time></trkpt>
-<trkpt lat="48.258884" lon="13.059515"><ele>345</ele><time>2014-11-01T03:01:53Z</time></trkpt>
-<trkpt lat="48.258884" lon="13.059515"><ele>345</ele><time>2014-11-01T03:01:54Z</time></trkpt>
-<trkpt lat="48.258884" lon="13.059515"><ele>345</ele><time>2014-11-01T03:01:55Z</time></trkpt>
-<trkpt lat="48.258884" lon="13.059515"><ele>345</ele><time>2014-11-01T03:01:56Z</time></trkpt>
-<trkpt lat="48.258884" lon="13.059515"><ele>345</ele><time>2014-11-01T03:01:57Z</time></trkpt>
-<trkpt lat="48.258884" lon="13.059515"><ele>345</ele><time>2014-11-01T03:01:58Z</time></trkpt>
-<trkpt lat="48.258884" lon="13.059515"><ele>345</ele><time>2014-11-01T03:01:59Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:01:52Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:01:53Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:01:54Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:01:55Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:01:56Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:01:57Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:01:58Z</time></trkpt>
+<trkpt ><time>2014-11-01T03:01:59Z</time></trkpt>
 <trkpt ><time>2014-11-01T03:01:59Z</time></trkpt>
  </trkseg></trk>
  <trk><name>Track n.5</name><trkseg>

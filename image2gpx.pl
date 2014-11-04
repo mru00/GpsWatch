@@ -465,7 +465,6 @@ EOF
           }
           elsif ($sample->{type} == 0x02) {
             $timestamp =~ s/..:..Z$/$sample->{timestamp}Z/;
-            $write = 1 && $has_initial_fix;
           }
           elsif ($sample->{type} == 0x03) {
             $timestamp = $sample->{timestamp};
