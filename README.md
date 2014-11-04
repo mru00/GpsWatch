@@ -1,6 +1,8 @@
 Copyright (C) 2014 mru@sisyphus.teil.cc
 
-Linux client for "crane gps watch" or "runtastic gps watch"
+Linux client for "crane gps watch" (from Aldi or Hofer).
+
+Should work with (unconfirmed): "runtastic gps watch", "conrad multi nav II",
 
 cleanroom implementation of the protocol.
 
