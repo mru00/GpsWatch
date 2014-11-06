@@ -17,9 +17,8 @@ ln -s $desc current
 mv from_watch.bin $desc/current.bin
 cp last/current.bin $desc/last.bin
 
-./image2gpx.pl $desc/current.bin > $desc/decode.log
 
-diff <(hexdump -C $desc/last.bin) <(hexdump -C $desc/current.bin) > $desc/diff.txt
+./from_image $desc
 
 echo "$title" > $desc/info.txt
 $EDITOR $desc/info.txt

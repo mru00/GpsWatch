@@ -18,8 +18,7 @@ $Data::Dumper::Sortkeys = 1;
 
 sub format_lon_lat {
   my ($val) = @_;
-  my $long_lat_scale = 10000000.0;
-  return $val / $long_lat_scale;
+  return $val / 10000000.0;
 }
 
 sub to_sint32 {
@@ -43,7 +42,7 @@ sub to_uint {
     return $_[0] + ($_[1]<<8);
   }
   elsif (@_ ==1) {
-    return pack ('C', $_[0]);
+    return $_[0];
   }
   die "not implemented : ".@_.Dumper(caller);
 }
@@ -86,34 +85,19 @@ sub parse_sample {
 
   $result->{length} = $lengths{$result->{type}} if defined $lengths{$result->{type}};
 
-  if ($result->{type} == 0x00 || $result->{type} == 0x80) {
-    $result->{timestamp} = format_gps_time( @{$data}[$addr+2 .. $addr+8] );
+  if ($result->{type} == 0x00 || $result->{type} == 0x01 || $result->{type} == 0x80) {
 
+    my $a;
     my $d = $data;
-    my $long_or_short_timestamp = 4;
-    my $a = $long_or_short_timestamp + $addr;
-    $result->{f1} = $d->[$addr+1];
-    # then comes long timestamp for 000, short for 001
-    $result->{lon} = to_sint32(@{$d}[$a+4 .. $a+7]);
-    $result->{lat} = to_sint32(@{$d}[$a+8 .. $a+11]);
-    $result->{ele} = to_sint32(@{$d}[$a+12 .. $a+13]);
-    $result->{f5} = $d->[$a+14];
-    $result->{f6} = $d->[$a+15];
-    $result->{f7} = $d->[$a+16];
-    $result->{f8} = $d->[$a+17];
-    $result->{f9} = $d->[$a+18];
-    $result->{f10} = $d->[$a+19];
-    $result->{hr} = $d->[$a+20];
-
-
-  }
-  elsif ($result->{type} == 0x01) {
-    $result->{timestamp} = format_mm_ss( @{$data}[$addr+2..$addr+4] );
-
-    my $d = $data;
-    my $long_or_short_timestamp = 0;
-    my $a = $long_or_short_timestamp + $addr;
-    $result->{fix_q_assumption} = $d->[$addr+1];
+    $result->{fix_quality_hunch} = $d->[$addr+1];
+    if ($result->{type} == 0x01) {
+      $result->{timestamp} = format_mm_ss( @{$data}[$addr+2..$addr+4] );
+      $a = $addr;
+    }
+    else {
+      $result->{timestamp} = format_gps_time( @{$data}[$addr+2 .. $addr+8] );
+      $a = $addr + 4;
+    }
     # then comes long timestamp for 000, short for 001
     $result->{lon} = to_sint32(@{$d}[$a+4 .. $a+7]);
     $result->{lat} = to_sint32(@{$d}[$a+8 .. $a+11]);
@@ -325,11 +309,11 @@ sub parse_block_0 {
     push(@{$result->{pathnames}}, $name);
   }
 
-  $result->{activities} = [];
+  $result->{profiles} = [];
   for (my $i = 0; $i < 5; $i++) {
     my $name = pack('C*', @{$data}[0x900 + $i*10 .. 0x900 + ($i+1)*10-1]);
     $name =~ s/\xff|\x00//g;
-    push(@{$result->{activities}}, $name);
+    push(@{$result->{profiles}}, $name);
   }
 
 
@@ -397,122 +381,267 @@ sub parse_file {
   return $parsed;
 }
 
-sub save_gpx {
+
+sub save_tcx {
+#http://www8.garmin.com/xmlschemas/TrainingCenterDatabasev2.xsd
+
   my ($parsed, $fn) = @_;
 
-  my $xml = XML::Writer->new({
-
-    });
-  open(my $fh, '>', $fn) or die "failed to open: $!";;
-
-  print $fh <<EOF;
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="crane gps watch" version="1.1"
-xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" 
-xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd"
->
-EOF
-
-  printf( $fh qq|
-    <metadata>
-    <name>%s</name>
-    <author>%s</author>
-    <copyright author="%s">
-    <year>2014</year>
-    <license>beer license</license>
-    </copyright>
-    </metadata>
-|,
-    "GPS Track from Crane GPS Watch",
-    'mru@sisyphus.teil.cc',
-    'mru@sisyphus.teil.cc');
-
-  my $i = 0;
-  if (ref $parsed->{wos} eq "ARRAY") {
-    foreach my $wo (@{$parsed->{wos}}) {
-      $i ++;
-
-      printf $fh " <trk><name>Track n.%d</name><trkseg>\n", $i;
-
-      my $entry = $wo->{samples};
-      if (!$entry->{is_first}) {
-
-        my $has_initial_fix = 0;
-        my $lat = 0;
-        my $lon = 0;
-        my $ele = 0;
-        my $timestamp = 0;
-
-        foreach my $sample (@{$entry->{samples}}){
-          my $write = 0;
-
-          if ($sample->{type} == 0x00) {
-            $has_initial_fix = 1;
-            $lat = $sample->{lat};
-            $lon = $sample->{lon};
-            $ele = $sample->{ele};
-            $timestamp = $sample->{timestamp};
-            $write = 1;
-          }
-          elsif ($sample->{type} == 0x01) {
-            $lat += $sample->{lat};
-            $lon += $sample->{lon};
-            $ele += $sample->{ele};
-            $timestamp =~ s/..:..Z$/$sample->{timestamp}Z/;
-            $write = 1 && $has_initial_fix;
-          }
-          elsif ($sample->{type} == 0x02) {
-            $timestamp =~ s/..:..Z$/$sample->{timestamp}Z/;
-          }
-          elsif ($sample->{type} == 0x03) {
-            $timestamp = $sample->{timestamp};
-          }
-          elsif ($sample->{type} == 0x80) {
-            $timestamp = $sample->{timestamp};
-          }
-
-
-          print $fh '<trkpt ';
-          if ($write) {
-            printf($fh 'lat="%f" lon="%f"><ele>%d</ele>',
-              format_lon_lat($lat), 
-              format_lon_lat($lon), 
-              $ele
-            );
-          }
-          else {
-            printf ($fh '>');
-          }
-
-          printf($fh '<time>%s</time>', $timestamp);
-
-          if (defined $sample->{hr} && $sample->{hr} != 0) {
-            printf ($fh qq|
-              <extensions>
-              <gpxtpx:TrackPointExtension>
-              <gpxtpx:hr>%d</gpxtpx:hr>
-              </gpxtpx:TrackPointExtension>
-              </extensions>
-              |,$sample->{hr}
-            );
-
-          }
-          printf ($fh '</trkpt>'."\n");
-        }
-      }
-      printf ($fh " </trkseg></trk>\n");
+  my $output = IO::File->new(">$fn");
+  my $ns_def = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2";
+  my $xml = XML::Writer->new(
+    OUTPUT => $output,
+    NAMESPACES => 1,
+    DATA_MODE => 1,
+    DATA_INDENT => ' ',
+    FORCED_NS_DECLS => [ $ns_def ],
+    PREFIX_MAP => {
+      $ns_def => '',
+      "http://www.w3.org/2001/XMLSchema-instance" => 'xsi'
     }
+  );
+
+  $xml->xmlDecl();
+  $xml->startTag('TrainingCenterDatabase');
 
 
+  $xml->startTag('Activities');
+
+
+  {
+    my $i = 0;
+    if (ref $parsed->{wos} eq "ARRAY") {
+      foreach my $wo (@{$parsed->{wos}}) {
+        $i ++;
+
+        $xml->startTag('Activity', Sport=> 'Other');
+        $xml->dataElement(Id => $wo->{start_time});
+        $xml->startTag('Lap', StartTime => $wo->{start_time});
+        $xml->dataElement(TotalTimeSeconds => 0);
+        $xml->dataElement(DistanceMeters => 0);
+        $xml->dataElement(Calories => int($wo->{calories}));
+        $xml->dataElement(Intensity => 'Active');
+        $xml->dataElement(TriggerMethod => 'Manual');
+
+        $xml->startTag('Track');
+
+
+        my $entry = $wo->{samples};
+        if (!$entry->{is_first}) {
+
+          my $has_initial_fix = 0;
+          my $lat = 0;
+          my $lon = 0;
+          my $ele = 0;
+          my $timestamp = 0;
+
+          foreach my $sample (@{$entry->{samples}}){
+            my $write = 0;
+
+            if ($sample->{type} == 0x00) {
+              $has_initial_fix = 1;
+              $lat = $sample->{lat};
+              $lon = $sample->{lon};
+              $ele = $sample->{ele};
+              $timestamp = $sample->{timestamp};
+              $write = 1;
+            }
+            elsif ($sample->{type} == 0x01) {
+              $lat += $sample->{lat};
+              $lon += $sample->{lon};
+              $ele += $sample->{ele};
+              $timestamp =~ s/..:..Z$/$sample->{timestamp}Z/;
+              $write = 1 && $has_initial_fix;
+            }
+            elsif ($sample->{type} == 0x02) {
+              $timestamp =~ s/..:..Z$/$sample->{timestamp}Z/;
+            }
+            elsif ($sample->{type} == 0x03 || $sample->{type} == 0x80) {
+              $timestamp = $sample->{timestamp};
+            }
+
+            $xml->startTag('Trackpoint');
+            $xml->dataElement(Time => $timestamp);
+
+            if ($write) {
+              $xml->startTag('Position');
+              $xml->dataElement(LatitudeDegrees=>format_lon_lat($lat));
+              $xml->dataElement(LongitudeDegrees=>format_lon_lat($lon));
+              $xml->endTag('Position');
+
+              $xml->dataElement(AltitudeMeters=>$ele);
+
+            }
+
+            if (defined $sample->{hr} && $sample->{hr} != 0) {
+              $xml->startTag('HeartRateBpm');
+              $xml->dataElement(Value => $sample->{hr});
+              $xml->endTag('HeartRateBpm');
+            }
+
+            $xml->endTag('Trackpoint');
+          }
+        }
+        $xml->endTag('Track');
+
+
+        $xml->dataElement(Notes => 'created track');
+
+        $xml->endTag('Lap');
+
+
+        $xml->dataElement(Notes => 'created lap');
+        $xml->endTag('Activity');
+
+
+
+
+      }
+    }
+    else {
+      $xml->comment("no data included in memdump");
+    }
   }
-  else {
-    print $fh "<!-- no data included in memdump -->\n";
+
+
+  $xml->endTag('Activities');
+
+
+  $xml->endTag('TrainingCenterDatabase');
+  $xml->end();
+  $output->close();
+
+}
+
+sub save_gpx {
+
+  # gpx files do not allow to add trackpoints without position.
+  # this means: it is impossible to create proper gpx's with the hometrainer:
+  # heartrate without gps
+
+  my ($parsed, $fn) = @_;
+
+  my $output = IO::File->new(">$fn");
+  my $ns_def = "http://www.topografix.com/GPX/1/1";
+  my $ns_gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1";
+  my $xml = XML::Writer->new(
+    OUTPUT => $output,
+    NAMESPACES => 1,
+    DATA_MODE => 1,
+    DATA_INDENT => ' ',
+    FORCED_NS_DECLS => [ $ns_gpxtpx, $ns_def ],
+    PREFIX_MAP => {
+      $ns_def => '',
+      $ns_gpxtpx => 'gpxtpx',
+      "http://www.garmin.com/xmlschemas/GpxExtensions/v3" => 'gpxx',
+      "http://www.w3.org/2001/XMLSchema-instance" => 'xsi'
+    }
+  );
+
+  $xml->xmlDecl();
+  $xml->startTag('gpx', creator => "gpswatch", version => "1.1");
+
+  $xml->startTag('metadata');
+    $xml->dataElement(name => "GPS Track from Crane GPS Watch");
+    $xml->startTag('author');
+    $xml->dataElement('email'=>'', id => 'mru', domain => 'sisyphus.teil.cc');
+    $xml->endTag('author');
+
+    $xml->startTag('copyright', author => 'mru@sisyphus.teil.cc');
+      $xml->dataElement(year => 2014);
+      $xml->dataElement(license => 'beer license');
+    $xml->endTag('copyright');
+  $xml->endTag('metadata');
+
+
+
+  {
+    my $i = 0;
+    if (ref $parsed->{wos} eq "ARRAY") {
+      foreach my $wo (@{$parsed->{wos}}) {
+        $i ++;
+
+        $xml->startTag('trk');
+        $xml->dataElement(name => $wo->{start_time});
+        $xml->dataElement(cmt=> '');
+        $xml->dataElement(desc => $parsed->{profiles}->[$wo->{profile}]);
+        $xml->dataElement(src => 'gps watch');
+        $xml->dataElement(number => $i);
+        $xml->dataElement(type => $parsed->{profiles}->[$wo->{profile}]);
+        $xml->startTag('trkseg');
+
+
+        my $entry = $wo->{samples};
+        if (!$entry->{is_first}) {
+
+          my $has_initial_fix = 0;
+          my $lat = 0;
+          my $lon = 0;
+          my $ele = 0;
+          my $timestamp = 0;
+
+          foreach my $sample (@{$entry->{samples}}){
+            my $write = 0;
+
+            if ($sample->{type} == 0x00) {
+              $has_initial_fix = 1;
+              $lat = $sample->{lat};
+              $lon = $sample->{lon};
+              $ele = $sample->{ele};
+              $timestamp = $sample->{timestamp};
+              $write = 1;
+            }
+            elsif ($sample->{type} == 0x01) {
+              $lat += $sample->{lat};
+              $lon += $sample->{lon};
+              $ele += $sample->{ele};
+              $timestamp =~ s/..:..Z$/$sample->{timestamp}Z/;
+              $write = 1 && $has_initial_fix;
+            }
+            elsif ($sample->{type} == 0x02) {
+              $timestamp =~ s/..:..Z$/$sample->{timestamp}Z/;
+            }
+            elsif ($sample->{type} == 0x03 || $sample->{type} == 0x80) {
+              $timestamp = $sample->{timestamp};
+            }
+
+
+            if ($write) {
+              $xml->startTag('trkpt', lat => format_lon_lat($lat), lon => format_lon_lat($lon));
+              $xml->dataElement(ele=>$ele);
+              $xml->dataElement(time => $timestamp);
+            }
+            else {
+              # this is wrong (according to the xsd):
+              $xml->startTag('trkpt', lat => 0, lon => 0);
+              $xml->dataElement(fix=>"none");
+            }
+
+            if (defined $sample->{hr} && $sample->{hr} != 0) {
+              $xml->startTag('extensions');
+              $xml->startTag([$ns_gpxtpx=>'TrackPointExtension']);
+              $xml->dataElement([$ns_gpxtpx=>'hr'], $sample->{hr});
+              $xml->endTag();
+              $xml->endTag('extensions');
+
+            }
+            $xml->endTag('trkpt');
+          }
+        }
+        $xml->endTag('trkseg');
+        $xml->endTag('trk');
+      }
+    }
+    else {
+      $xml->comment("no data included in memdump");
+    }
   }
 
-  print $fh '</gpx>';
-  close($fh);
+
+  $xml->endTag('gpx');
+  $xml->end();
+  $output->close();
+
 }
 
 
@@ -528,6 +657,7 @@ foreach my $fn (@ARGV) {
   eval {
     my $result = parse_file($data, $fn);
     save_gpx($result, $fn.".gpx");
+    save_tcx($result, $fn.".tcx");
     1;
   };
   if ($@) {

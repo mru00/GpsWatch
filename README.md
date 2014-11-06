@@ -19,6 +19,10 @@ test it:
 
 see also:
 
+
+"My Tourbook": http://mytourbook.sourceforge.net/mytourbook/
+works great with the tcx files.
+
 "Viking GPS data editor and analyzer" http://sourceforge.net/projects/viking/
 
 https://github.com/mru00/gpxstat
