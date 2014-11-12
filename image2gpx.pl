@@ -278,7 +278,7 @@ sub parse_block_0 {
 
       if ($wo_entry != 0xff) {
 
-        if ($leader == 1) { 
+        if ($leader == 1) {
 
           my $parsed = parse_leader_block($data, $wo_entry, 0);
 
